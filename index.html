@@ -3,9 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- alpinejs -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+
+    <!-- font Google Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- flowbite -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> -->
+
     <title>Azzle - AI Technology & Startup HTML Template</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background-color: #f6f4ef;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 </head>
-<body>
-    
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" @keydown.escape.window="open = false" @resize.window="if (window.innerWidth >= 1024) open = false">
+    <header class="absolute inset-x-0 top-0 z-[999]">
+        <div class="mx-auto flex w-full max-w-[1332px] items-center justify-between gap-8 px-4 py-4 lg:px-6">
+            <a href="index.html" class="shrink-0">
+                <img src="assets/images/logo-dark.png" alt="Azzle" width="96" height="24">
+            </a>
+
+            <div x-show="open" x-cloak @click="open = false" class="fixed inset-0 z-40 bg-black/40 lg:hidden"></div>
+
+            <nav class="max-lg:fixed max-lg:inset-y-0 max-lg:right-0 max-lg:z-50 max-lg:flex max-lg:w-[min(100%,320px)] max-lg:translate-x-full max-lg:flex-col max-lg:overflow-y-auto max-lg:bg-white max-lg:px-6 max-lg:pb-10 max-lg:pt-20 max-lg:shadow-2xl max-lg:transition-transform max-lg:duration-300" :class="{ 'max-lg:!translate-x-0': open }" aria-label="Primary">
+                <button type="button" class="absolute right-5 top-5 text-3xl leading-none text-black lg:hidden" @click="open = false" aria-label="Close menu">&times;</button>
+
+                <ul class="flex flex-col lg:flex-row lg:items-center lg:gap-[50px]" x-data="{ active: null }">
+                    <li class="group/demo relative border-b border-black/10 lg:border-0">
+                        <a href="#" class="flex items-center justify-between gap-1 py-3 text-base font-semibold capitalize text-[#191919] lg:py-0" @click.prevent="active = active === 'demo' ? null : 'demo'" :aria-expanded="active === 'demo'">
+                            Demo
+                            <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4 rotate-90 lg:group-hover/demo:rotate-0 lg:transition lg:duration-300">
+                        </a>
+                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/demo:visible lg:group-hover/demo:opacity-100" :class="active === 'demo' ? 'max-lg:block' : 'max-lg:hidden'">
+                            <ul class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none">
+                                <span class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
+                                <li><a href="index.html" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home 01</a></li>
+                                <li><a href="#" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home 02</a></li>
+                                <li><a href="#" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home 03</a></li>
+                                <li><a href="#" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home 04</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="border-b border-black/10 lg:border-0">
+                        <a href="About/about.html" class="block py-3 text-base font-semibold text-[#191919] lg:py-0">About</a>
+                    </li>
+
+                    <li class="group/services relative border-b border-black/10 lg:border-0">
+                        <a href="#" class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0" @click.prevent="active = active === 'services' ? null : 'services'" :aria-expanded="active === 'services'">
+                            Services
+                            <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4 rotate-90 lg:group-hover/services:rotate-0 lg:transition lg:duration-300">
+                        </a>
+                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/services:visible lg:group-hover/services:opacity-100" :class="active === 'services' ? 'max-lg:block' : 'max-lg:hidden'">
+                            <ul class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none">
+                                <span class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
+                                <li><a href="Services/services.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Services</a></li>
+                                <li><a href="Services/service-details.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Service Details</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="group/pages relative border-b border-black/10 lg:border-0">
+                        <a href="#" class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0" @click.prevent="active = active === 'pages' ? null : 'pages'" :aria-expanded="active === 'pages'">
+                            Pages
+                            <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4 rotate-90 lg:group-hover/pages:rotate-0 lg:transition lg:duration-300">
+                        </a>
+                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/pages:visible lg:group-hover/pages:opacity-100" :class="active === 'pages' ? 'max-lg:block' : 'max-lg:hidden'">
+                            <ul class="relative min-w-[210px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none" x-data="{ active: null }">
+                                <span class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
+
+                                <li class="group/blogs relative">
+                                    <a href="#" class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]" @click.prevent="active = active === 'blogs' ? null : 'blogs'" :aria-expanded="active === 'blogs'">
+                                        blogs
+                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
+                                    </a>
+                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/blogs:visible lg:group-hover/blogs:opacity-100" :class="active === 'blogs' ? 'max-lg:block' : 'max-lg:hidden'">
+                                        <ul class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
+                                            <li><a href="Pages/Blogs/blog.html" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">blogs</a></li>
+                                            <li><a href="Pages/Blogs/blog-details.html" class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">blog details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="group/team relative">
+                                    <a href="#" class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]" @click.prevent="active = active === 'team' ? null : 'team'" :aria-expanded="active === 'team'">
+                                        Team
+                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
+                                    </a>
+                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/team:visible lg:group-hover/team:opacity-100" :class="active === 'team' ? 'max-lg:block' : 'max-lg:hidden'">
+                                        <ul class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
+                                            <li><a href="Pages/Teams/teams.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Teams</a></li>
+                                            <li><a href="Pages/Teams/team-details.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Teams Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="group/faq relative">
+                                    <a href="#" class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]" @click.prevent="active = active === 'faq' ? null : 'faq'" :aria-expanded="active === 'faq'">
+                                        FAQ
+                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
+                                    </a>
+                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/faq:visible lg:group-hover/faq:opacity-100" :class="active === 'faq' ? 'max-lg:block' : 'max-lg:hidden'">
+                                        <ul class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
+                                            <li><a href="Pages/FAQ/faq.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">FAQ-1</a></li>
+                                            <li><a href="Pages/FAQ/faq-2.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">FAQ-2</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="group/portfolio relative">
+                                    <a href="#" class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]" @click.prevent="active = active === 'portfolio' ? null : 'portfolio'" :aria-expanded="active === 'portfolio'">
+                                        Portfolio
+                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
+                                    </a>
+                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/portfolio:visible lg:group-hover/portfolio:opacity-100" :class="active === 'portfolio' ? 'max-lg:block' : 'max-lg:hidden'">
+                                        <ul class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
+                                            <li><a href="Pages/Portfolio/portfolio.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Portfolio</a></li>
+                                            <li><a href="Pages/Portfolio/portfolio-details.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Portfolio Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a href="Pages/Pricing/pricing.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Pricing</a>
+                                </li>
+
+                                <li class="group/utilities relative">
+                                    <a href="#" class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]" @click.prevent="active = active === 'utilities' ? null : 'utilities'" :aria-expanded="active === 'utilities'">
+                                        Utilities
+                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
+                                    </a>
+                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/utilities:visible lg:group-hover/utilities:opacity-100" :class="active === 'utilities' ? 'max-lg:block' : 'max-lg:hidden'">
+                                        <ul class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
+                                            <li><a href="Pages/Utilities/error-404.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Error 404</a></li>
+                                            <li><a href="Pages/Utilities/login.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Login</a></li>
+                                            <li><a href="Pages/Utilities/signup.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Signup</a></li>
+                                            <li><a href="Pages/Utilities/reset-password.html" class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Reset Password</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="Contact/contact.html" class="block py-3 text-base font-semibold text-[#191919] lg:py-0">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="relative z-[70] flex items-center gap-3 lg:gap-6">
+                <a href="Pages/Utilities/login.html" class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-2 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white lg:inline-flex">
+                    <span class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
+                    <span class="relative">Login</span>
+                </a>
+                <a href="Pages/Utilities/signup.html" class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-2 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] lg:inline-flex">
+                    <span class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
+                    <span class="relative whitespace-nowrap">Sign up free</span>
+                </a>
+                <button type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden" :class="{ 'max-lg:hidden': open }" @click="open = !open" :aria-expanded="open" aria-label="Open menu">
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
 </body>
 </html>
