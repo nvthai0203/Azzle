@@ -62,7 +62,7 @@ Icon Flaticon dùng `assets/css/flaticon/flaticon.css`. File font đi kèm là `
 
 Chỉ làm Home 01.
 
-### Member 1 — Trang chủ và các khối tái sử dụng
+### Member 1 - Nguyễn Văn Thái — Trang chủ và các khối tái sử dụng
 
 Pricing và FAQ đã nằm trên trang chủ, làm một lần rồi gắn sang trang kia.
 
@@ -73,7 +73,7 @@ Pricing và FAQ đã nằm trên trang chủ, làm một lần rồi gắn sang 
 | `Pages/FAQ/faq.html` | Banner, 8 câu hỏi đóng/mở, dải liên hệ cuối trang |
 | `Pages/FAQ/faq-2.html` | Cùng nội dung FAQ, bố cục khác FAQ-1 |
 
-### Member 2 — Giới thiệu, dịch vụ, liên hệ
+### Member 2 - Nguyễn Hoàng Đạo — Giới thiệu, dịch vụ, liên hệ
 
 | File | Nội dung |
 |---|---|
@@ -82,7 +82,7 @@ Pricing và FAQ đã nằm trên trang chủ, làm một lần rồi gắn sang 
 | `Services/service-details.html` | Banner, phần giới thiệu, preprocessing / predictive analytics, 3 nhóm ngành, số liệu 92% và 75%, quản lý dữ liệu, dải liên hệ |
 | `Contact/contact.html` | Banner, email / điện thoại / mạng xã hội, form liên hệ, 3 văn phòng (Toronto, Sao Paulo, Bamako) |
 
-### Member 3 — Bài viết, đội ngũ, portfolio, tài khoản
+### Member 3 - Mai Thạch Anh — Bài viết, đội ngũ, portfolio, tài khoản
 
 Nhiều file hơn, nhưng chỉ 3 dạng: lưới thẻ, trang chi tiết, form giữa màn hình. Ba form tài khoản và trang 404 dùng chung một khung.
 
