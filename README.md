@@ -60,41 +60,35 @@ Icon Flaticon dùng `assets/css/flaticon/flaticon.css`. File font đi kèm là `
 
 ## Phân công
 
-Chỉ làm Home 01.
+Chỉ làm trang Home 01 trong `index.html`. Các trang còn lại không làm.
 
-### Member 1 - Nguyễn Văn Thái — Trang chủ và các khối tái sử dụng
+Cả nhóm sửa cùng một file. Mỗi người chỉ thêm hoặc sửa đúng khối của mình, theo thứ tự từ trên xuống dưới.
 
-Pricing và FAQ đã nằm trên trang chủ, làm một lần rồi gắn sang trang kia.
+### Member 1 — Nguyễn Văn Thái — Đầu trang
 
-| File | Nội dung |
+Header đã có sẵn. Làm tiếp các khối ngay bên dưới.
+
+| Khối | Nội dung |
 |---|---|
-| `index.html` | Header, hero, dải logo đối tác, 4 tính năng, “Accessible to a wider audience”, “Quick deploy”, khối video/số liệu, pricing, FAQ, testimonial, footer |
-| `Pages/Pricing/pricing.html` | Banner, 4 gói Free / Beginner / Starter / Pro, nút Monthly / Annually, FAQ |
-| `Pages/FAQ/faq.html` | Banner, 8 câu hỏi đóng/mở, dải liên hệ cuối trang |
-| `Pages/FAQ/faq-2.html` | Cùng nội dung FAQ, bố cục khác FAQ-1 |
+| Header | Logo, menu, nút Login và Sign up free |
+| Hero | Tiêu đề “Simplify your SaaS solution with AI”, mô tả, hai nút, ảnh dashboard |
+| Logo đối tác | Dòng chữ tin cậy và dải logo chạy ngang |
+| Core features | 4 thẻ: Resource Flexibility, Managed Services, Web-Based Access, Resource Flexibility |
 
-### Member 2 - Nguyễn Hoàng Đạo — Giới thiệu, dịch vụ, liên hệ
+### Member 2 — Nguyễn Hoàng Đạo — Giữa trang
 
-| File | Nội dung |
+| Khối | Nội dung |
 |---|---|
-| `About/about.html` | Banner, 4 số liệu (2K+, 95%, 40+, 73+), sứ mệnh, 4 giá trị cốt lõi, lưới thành viên, dải liên hệ |
-| `Services/services.html` | Banner, 8 thẻ dịch vụ. Khối FAQ và testimonial copy từ Member 1 |
-| `Services/service-details.html` | Banner, phần giới thiệu, preprocessing / predictive analytics, 3 nhóm ngành, số liệu 92% và 75%, quản lý dữ liệu, dải liên hệ |
-| `Contact/contact.html` | Banner, email / điện thoại / mạng xã hội, form liên hệ, 3 văn phòng (Toronto, Sao Paulo, Bamako) |
+| Accessible to a wider audience | Ảnh và hai đoạn mô tả |
+| Providing quick deploy solutions | Đoạn giới thiệu và 3 dòng có dấu check |
+| Video | Ảnh funfact và nút Play |
+| AI-powered that streamline tasks | Đoạn mô tả và hai số liệu 92%, 75% |
 
-### Member 3 - Mai Thạch Anh — Bài viết, đội ngũ, portfolio, tài khoản
+### Member 3 — Mai Thạch Anh — Cuối trang
 
-Nhiều file hơn, nhưng chỉ 3 dạng: lưới thẻ, trang chi tiết, form giữa màn hình. Ba form tài khoản và trang 404 dùng chung một khung.
-
-| File | Nội dung |
+| Khối | Nội dung |
 |---|---|
-| `Pages/Blogs/blog.html` | Banner “Our Blog”, 6 bài (chuyên mục, ngày, tiêu đề, mô tả) |
-| `Pages/Blogs/blog-details.html` | Ảnh bài viết, nội dung, thông tin tác giả |
-| `Pages/Teams/teams.html` | Banner, 8 thành viên (tên, chức danh), khối “Join our team” |
-| `Pages/Teams/team-details.html` | Ảnh, tên, chức danh, tiểu sử, mạng xã hội |
-| `Pages/Portfolio/portfolio.html` | Banner, 6 dự án |
-| `Pages/Portfolio/portfolio-details.html` | Ảnh dự án, mô tả, kết quả |
-| `Pages/Utilities/login.html` | Form “Welcome back” |
-| `Pages/Utilities/signup.html` | Form đăng ký |
-| `Pages/Utilities/reset-password.html` | Form đặt lại mật khẩu |
-| `Pages/Utilities/error-404.html` | Thông báo không tìm thấy trang, nút về trang chủ |
+| Pricing | Nút Monthly / Annually và 3 gói Beginner, Starter, Pro |
+| FAQ | 3 câu hỏi đóng/mở và nút “Ask you questions” |
+| Testimonials | Tiêu đề và các nhận xét của người dùng |
+| Footer | Dải chữ “Start building software”, giới thiệu, cột link, form newsletter |
