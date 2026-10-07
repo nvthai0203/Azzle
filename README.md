@@ -62,33 +62,37 @@ Icon Flaticon dùng `assets/css/flaticon/flaticon.css`. File font đi kèm là `
 
 Chỉ làm trang Home 01 trong `index.html`. Các trang còn lại không làm.
 
-Cả nhóm sửa cùng một file. Mỗi người chỉ thêm hoặc sửa đúng khối của mình, theo thứ tự từ trên xuống dưới.
+Cả nhóm sửa cùng file `index.html`. Mỗi khối nằm giữa một cặp comment `MEMBER-x:START` và `MEMBER-x:END`. Chỉ sửa bên trong cặp của mình, không format cả file, để Git gộp nhánh mà không đụng nhau.
+
+| Thành viên | Cặp comment |
+|---|---|
+| Nguyễn Văn Thái | `MEMBER-1` |
+| Nguyễn Hoàng Đạo | `MEMBER-2` |
+| Mai Thạch Anh | `MEMBER-3` |
 
 ### Member 1 — Nguyễn Văn Thái — Đầu trang
 
-Header đã có sẵn. Làm tiếp các khối ngay bên dưới.
-
-| Khối | Nội dung |
-|---|---|
-| Header | Logo, menu, nút Login và Sign up free |
-| Hero | Tiêu đề “Simplify your SaaS solution with AI”, mô tả, hai nút, ảnh dashboard |
-| Logo đối tác | Dòng chữ tin cậy và dải logo chạy ngang |
-| Core features | 4 thẻ: Resource Flexibility, Managed Services, Web-Based Access, Resource Flexibility |
+| Khối | Mốc trong `index.html` | Nội dung |
+|---|---|---|
+| Header | `MEMBER-1:START header` | Logo, menu, nút Login và Sign up free |
+| Hero | `MEMBER-1:START hero` | Tiêu đề “Simplify your SaaS solution with AI”, mô tả, hai nút, ảnh dashboard |
+| Logo đối tác | `MEMBER-1:START brands` | Dòng chữ tin cậy và dải logo chạy ngang |
+| Core features | `MEMBER-1:START features` | 4 thẻ: Resource Flexibility, Managed Services, Web-Based Access, Resource Flexibility |
 
 ### Member 2 — Nguyễn Hoàng Đạo — Giữa trang
 
-| Khối | Nội dung |
-|---|---|
-| Accessible to a wider audience | Ảnh và hai đoạn mô tả |
-| Providing quick deploy solutions | Đoạn giới thiệu và 3 dòng có dấu check |
-| Video | Ảnh funfact và nút Play |
-| AI-powered that streamline tasks | Đoạn mô tả và hai số liệu 92%, 75% |
+| Khối | Mốc trong `index.html` | Nội dung |
+|---|---|---|
+| Accessible to a wider audience | `MEMBER-2:START audience` | Ảnh và hai đoạn mô tả |
+| Providing quick deploy solutions | `MEMBER-2:START deploy` | Đoạn giới thiệu và 3 dòng có dấu check |
+| Video | `MEMBER-2:START video` | Ảnh funfact và nút Play |
+| AI-powered that streamline tasks | `MEMBER-2:START stats` | Đoạn mô tả và hai số liệu 92%, 75% |
 
 ### Member 3 — Mai Thạch Anh — Cuối trang
 
-| Khối | Nội dung |
-|---|---|
-| Pricing | Nút Monthly / Annually và 3 gói Beginner, Starter, Pro |
-| FAQ | 3 câu hỏi đóng/mở và nút “Ask you questions” |
-| Testimonials | Tiêu đề và các nhận xét của người dùng |
-| Footer | Dải chữ “Start building software”, giới thiệu, cột link, form newsletter |
+| Khối | Mốc trong `index.html` | Nội dung |
+|---|---|---|
+| Pricing | `MEMBER-3:START pricing` | Nút Monthly / Annually và 3 gói Beginner, Starter, Pro |
+| FAQ | `MEMBER-3:START faq` | 3 câu hỏi đóng/mở và nút “Ask you questions” |
+| Testimonials | `MEMBER-3:START testimonials` | Tiêu đề và các nhận xét của người dùng |
+| Footer | `MEMBER-3:START footer` | Dải chữ “Start building software”, giới thiệu, cột link, form newsletter |

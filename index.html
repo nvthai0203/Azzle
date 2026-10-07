@@ -34,6 +34,7 @@
 
 <body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" @keydown.escape.window="open = false"
     @resize.window="if (window.innerWidth >= 1024) open = false">
+    <!-- MEMBER-1:START header | Nguyễn Văn Thái. Chỉ sửa trong cặp START/END của mình, không format cả file. -->
     <header class="absolute inset-x-0 top-0 z-[999]">
         <div class="mx-auto flex w-full max-w-[1332px] items-center justify-between gap-8 px-4 py-4 lg:px-6">
             <a href="index.html" class="shrink-0">
@@ -279,6 +280,53 @@
             </div>
         </div>
     </header>
+    <!-- MEMBER-1:END header -->
+
+    <main>
+        <!-- MEMBER-1:START hero | Nguyễn Văn Thái -->
+        <section id="hero" aria-label="Hero"></section>
+        <!-- MEMBER-1:END hero -->
+
+        <!-- MEMBER-1:START brands | Nguyễn Văn Thái -->
+        <section id="brands" aria-label="Partner logos"></section>
+        <!-- MEMBER-1:END brands -->
+
+        <!-- MEMBER-1:START features | Nguyễn Văn Thái -->
+        <section id="features" aria-label="Core features"></section>
+        <!-- MEMBER-1:END features -->
+
+        <!-- MEMBER-2:START audience | Nguyễn Hoàng Đạo -->
+        <section id="audience" aria-label="Accessible to a wider audience"></section>
+        <!-- MEMBER-2:END audience -->
+
+        <!-- MEMBER-2:START deploy | Nguyễn Hoàng Đạo -->
+        <section id="deploy" aria-label="Providing quick deploy solutions"></section>
+        <!-- MEMBER-2:END deploy -->
+
+        <!-- MEMBER-2:START video | Nguyễn Hoàng Đạo -->
+        <section id="video" aria-label="Video"></section>
+        <!-- MEMBER-2:END video -->
+
+        <!-- MEMBER-2:START stats | Nguyễn Hoàng Đạo -->
+        <section id="stats" aria-label="AI-powered that streamline tasks"></section>
+        <!-- MEMBER-2:END stats -->
+
+        <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
+        <section id="pricing" aria-label="Pricing"></section>
+        <!-- MEMBER-3:END pricing -->
+
+        <!-- MEMBER-3:START faq | Mai Thạch Anh -->
+        <section id="faq" aria-label="FAQ"></section>
+        <!-- MEMBER-3:END faq -->
+
+        <!-- MEMBER-3:START testimonials | Mai Thạch Anh -->
+        <section id="testimonials" aria-label="Testimonials"></section>
+        <!-- MEMBER-3:END testimonials -->
+    </main>
+
+    <!-- MEMBER-3:START footer | Mai Thạch Anh -->
+    <footer id="footer"></footer>
+    <!-- MEMBER-3:END footer -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
 </body>
