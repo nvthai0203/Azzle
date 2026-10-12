@@ -1,327 +1,730 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- tailwindcss -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- alpinejs -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"
+    ></script>
 
     <!-- font Google Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- flowbite -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> -->
 
+    <!-- font local -->
+    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+
     <title>Azzle - AI Technology & Startup HTML Template</title>
     <style>
-        body {
-            font-family: Inter, sans-serif;
-            background-color: #f6f4ef;
-        }
+      body {
+        font-family: Inter, sans-serif;
+        background-color: #f6f4ef;
+      }
 
-        [x-cloak] {
-            display: none !important;
-        }
+      [x-cloak] {
+        display: none !important;
+      }
     </style>
-</head>
+  </head>
 
-<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" @keydown.escape.window="open = false"
-    @resize.window="if (window.innerWidth >= 1024) open = false">
+  <body
+    x-data="{ open: false }"
+    :class="{ 'overflow-hidden': open }"
+    @keydown.escape.window="open = false"
+    @resize.window="if (window.innerWidth >= 1024) open = false"
+  >
     <!-- MEMBER-1:START header | Nguyễn Văn Thái. Chỉ sửa trong cặp START/END của mình, không format cả file. -->
     <header class="absolute inset-x-0 top-0 z-[999]">
-        <div class="mx-auto flex w-full max-w-[1332px] items-center justify-between gap-8 px-4 py-4 lg:px-6">
-            <a href="index.html" class="shrink-0">
-                <img src="assets/images/logo-dark.png" alt="Azzle" width="96" height="24">
-            </a>
+      <div
+        class="mx-auto flex w-full max-w-[1332px] items-center justify-between gap-8 px-4 py-4 lg:px-6"
+      >
+        <a href="index.html" class="shrink-0">
+          <img
+            src="assets/images/logo-dark.png"
+            alt="Azzle"
+            width="96"
+            height="24"
+          />
+        </a>
 
-            <div x-show="open" x-cloak @click="open = false" class="fixed inset-0 z-40 bg-black/40 lg:hidden"></div>
+        <div
+          x-show="open"
+          x-cloak
+          @click="open = false"
+          class="fixed inset-0 z-40 bg-black/40 lg:hidden"
+        ></div>
 
-            <nav class="max-lg:fixed max-lg:inset-y-0 max-lg:right-0 max-lg:z-50 max-lg:flex max-lg:w-[min(100%,320px)] max-lg:translate-x-full max-lg:flex-col max-lg:overflow-y-auto max-lg:bg-white max-lg:px-6 max-lg:pb-10 max-lg:pt-20 max-lg:shadow-2xl max-lg:transition-transform max-lg:duration-300"
-                :class="{ 'max-lg:!translate-x-0': open }" aria-label="Primary">
-                <button type="button" class="absolute right-5 top-5 text-3xl leading-none text-black lg:hidden"
-                    @click="open = false" aria-label="Close menu">&times;</button>
+        <nav
+          class="max-lg:fixed max-lg:inset-y-0 max-lg:right-0 max-lg:z-50 max-lg:flex max-lg:w-[min(100%,320px)] max-lg:translate-x-full max-lg:flex-col max-lg:overflow-y-auto max-lg:bg-white max-lg:px-6 max-lg:pb-10 max-lg:pt-20 max-lg:shadow-2xl max-lg:transition-transform max-lg:duration-300"
+          :class="{ 'max-lg:!translate-x-0': open }"
+          aria-label="Primary"
+        >
+          <button
+            type="button"
+            class="absolute right-5 top-5 text-3xl leading-none text-black lg:hidden"
+            @click="open = false"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
 
-                <ul class="flex flex-col lg:flex-row lg:items-center lg:gap-[50px]" x-data="{ active: null }">
-                    <li class="group/demo relative border-b border-black/10 lg:border-0">
-                        <a href="#"
-                            class="flex items-center justify-between gap-1 py-3 text-base font-semibold capitalize text-[#191919] lg:py-0"
-                            @click.prevent="active = active === 'demo' ? null : 'demo'"
-                            :aria-expanded="active === 'demo'">
-                            Demo
-                            <img src="assets/images/icon-black-cheveron-right.svg" alt=""
-                                class="h-4 w-4 rotate-90 lg:group-hover/demo:rotate-0 lg:transition lg:duration-300">
-                        </a>
-                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/demo:visible lg:group-hover/demo:opacity-100"
-                            :class="active === 'demo' ? 'max-lg:block' : 'max-lg:hidden'">
-                            <ul
-                                class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none">
-                                <span
-                                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
-                                <li><a href="index.html"
-                                        class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home
-                                        01</a></li>
-                                <li><a href="#"
-                                        class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home
-                                        02</a></li>
-                                <li><a href="#"
-                                        class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home
-                                        03</a></li>
-                                <li><a href="#"
-                                        class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">home
-                                        04</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="border-b border-black/10 lg:border-0">
-                        <a href="About/about.html"
-                            class="block py-3 text-base font-semibold text-[#191919] lg:py-0">About</a>
-                    </li>
-
-                    <li class="group/services relative border-b border-black/10 lg:border-0">
-                        <a href="#"
-                            class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
-                            @click.prevent="active = active === 'services' ? null : 'services'"
-                            :aria-expanded="active === 'services'">
-                            Services
-                            <img src="assets/images/icon-black-cheveron-right.svg" alt=""
-                                class="h-4 w-4 rotate-90 lg:group-hover/services:rotate-0 lg:transition lg:duration-300">
-                        </a>
-                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/services:visible lg:group-hover/services:opacity-100"
-                            :class="active === 'services' ? 'max-lg:block' : 'max-lg:hidden'">
-                            <ul
-                                class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none">
-                                <span
-                                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
-                                <li><a href="Services/services.html"
-                                        class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Services</a>
-                                </li>
-                                <li><a href="Services/service-details.html"
-                                        class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Service
-                                        Details</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="group/pages relative border-b border-black/10 lg:border-0">
-                        <a href="#"
-                            class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
-                            @click.prevent="active = active === 'pages' ? null : 'pages'"
-                            :aria-expanded="active === 'pages'">
-                            Pages
-                            <img src="assets/images/icon-black-cheveron-right.svg" alt=""
-                                class="h-4 w-4 rotate-90 lg:group-hover/pages:rotate-0 lg:transition lg:duration-300">
-                        </a>
-                        <div class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/pages:visible lg:group-hover/pages:opacity-100"
-                            :class="active === 'pages' ? 'max-lg:block' : 'max-lg:hidden'">
-                            <ul class="relative min-w-[210px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
-                                x-data="{ active: null }">
-                                <span
-                                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"></span>
-
-                                <li class="group/blogs relative">
-                                    <a href="#"
-                                        class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
-                                        @click.prevent="active = active === 'blogs' ? null : 'blogs'"
-                                        :aria-expanded="active === 'blogs'">
-                                        blogs
-                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
-                                    </a>
-                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/blogs:visible lg:group-hover/blogs:opacity-100"
-                                        :class="active === 'blogs' ? 'max-lg:block' : 'max-lg:hidden'">
-                                        <ul
-                                            class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
-                                            <li><a href="Pages/Blogs/blog.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">blogs</a>
-                                            </li>
-                                            <li><a href="Pages/Blogs/blog-details.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]">blog
-                                                    details</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="group/team relative">
-                                    <a href="#"
-                                        class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                                        @click.prevent="active = active === 'team' ? null : 'team'"
-                                        :aria-expanded="active === 'team'">
-                                        Team
-                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
-                                    </a>
-                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/team:visible lg:group-hover/team:opacity-100"
-                                        :class="active === 'team' ? 'max-lg:block' : 'max-lg:hidden'">
-                                        <ul
-                                            class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
-                                            <li><a href="Pages/Teams/teams.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Teams</a>
-                                            </li>
-                                            <li><a href="Pages/Teams/team-details.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Teams
-                                                    Details</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="group/faq relative">
-                                    <a href="#"
-                                        class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                                        @click.prevent="active = active === 'faq' ? null : 'faq'"
-                                        :aria-expanded="active === 'faq'">
-                                        FAQ
-                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
-                                    </a>
-                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/faq:visible lg:group-hover/faq:opacity-100"
-                                        :class="active === 'faq' ? 'max-lg:block' : 'max-lg:hidden'">
-                                        <ul
-                                            class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
-                                            <li><a href="Pages/FAQ/faq.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">FAQ-1</a>
-                                            </li>
-                                            <li><a href="Pages/FAQ/faq-2.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">FAQ-2</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="group/portfolio relative">
-                                    <a href="#"
-                                        class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                                        @click.prevent="active = active === 'portfolio' ? null : 'portfolio'"
-                                        :aria-expanded="active === 'portfolio'">
-                                        Portfolio
-                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
-                                    </a>
-                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/portfolio:visible lg:group-hover/portfolio:opacity-100"
-                                        :class="active === 'portfolio' ? 'max-lg:block' : 'max-lg:hidden'">
-                                        <ul
-                                            class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
-                                            <li><a href="Pages/Portfolio/portfolio.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Portfolio</a>
-                                            </li>
-                                            <li><a href="Pages/Portfolio/portfolio-details.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Portfolio
-                                                    Details</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a href="Pages/Pricing/pricing.html"
-                                        class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Pricing</a>
-                                </li>
-
-                                <li class="group/utilities relative">
-                                    <a href="#"
-                                        class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                                        @click.prevent="active = active === 'utilities' ? null : 'utilities'"
-                                        :aria-expanded="active === 'utilities'">
-                                        Utilities
-                                        <img src="assets/images/icon-black-cheveron-right.svg" alt="" class="h-4 w-4">
-                                    </a>
-                                    <div class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/utilities:visible lg:group-hover/utilities:opacity-100"
-                                        :class="active === 'utilities' ? 'max-lg:block' : 'max-lg:hidden'">
-                                        <ul
-                                            class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none">
-                                            <li><a href="Pages/Utilities/error-404.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Error
-                                                    404</a></li>
-                                            <li><a href="Pages/Utilities/login.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Login</a>
-                                            </li>
-                                            <li><a href="Pages/Utilities/signup.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Signup</a>
-                                            </li>
-                                            <li><a href="Pages/Utilities/reset-password.html"
-                                                    class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]">Reset
-                                                    Password</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="Contact/contact.html"
-                            class="block py-3 text-base font-semibold text-[#191919] lg:py-0">Contact</a>
-                    </li>
+          <ul
+            class="flex flex-col lg:flex-row lg:items-center lg:gap-[50px]"
+            x-data="{ active: null }"
+          >
+            <li
+              class="group/demo relative border-b border-black/10 lg:border-0"
+            >
+              <a
+                href="#"
+                class="flex items-center justify-between gap-1 py-3 text-base font-semibold capitalize text-[#191919] lg:py-0"
+                @click.prevent="active = active === 'demo' ? null : 'demo'"
+                :aria-expanded="active === 'demo'"
+              >
+                Demo
+                <img
+                  src="assets/images/icon-black-cheveron-right.svg"
+                  alt=""
+                  class="h-4 w-4 rotate-90 lg:group-hover/demo:rotate-0 lg:transition lg:duration-300"
+                />
+              </a>
+              <div
+                class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/demo:visible lg:group-hover/demo:opacity-100"
+                :class="active === 'demo' ? 'max-lg:block' : 'max-lg:hidden'"
+              >
+                <ul
+                  class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
+                >
+                  <span
+                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"
+                  ></span>
+                  <li>
+                    <a
+                      href="index.html"
+                      class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                      >home 01</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                      >home 02</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                      >home 03</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                      >home 04</a
+                    >
+                  </li>
                 </ul>
-            </nav>
+              </div>
+            </li>
 
-            <div class="relative z-[70] flex items-center gap-3 lg:gap-6">
-                <a href="Pages/Utilities/login.html"
-                    class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-2 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white lg:inline-flex">
-                    <span
-                        class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
-                    <span class="relative">Login</span>
-                </a>
-                <a href="Pages/Utilities/signup.html"
-                    class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-2 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] lg:inline-flex">
-                    <span
-                        class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
-                    <span class="relative whitespace-nowrap">Sign up free</span>
-                </a>
-                <button type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
-                    :class="{ 'max-lg:hidden': open }" @click="open = !open" :aria-expanded="open"
-                    aria-label="Open menu">
-                    <span class="block h-0.5 w-6 bg-black"></span>
-                    <span class="block h-0.5 w-6 bg-black"></span>
-                    <span class="block h-0.5 w-6 bg-black"></span>
-                </button>
-            </div>
+            <li class="border-b border-black/10 lg:border-0">
+              <a
+                href="About/about.html"
+                class="block py-3 text-base font-semibold text-[#191919] lg:py-0"
+                >About</a
+              >
+            </li>
+
+            <li
+              class="group/services relative border-b border-black/10 lg:border-0"
+            >
+              <a
+                href="#"
+                class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
+                @click.prevent="active = active === 'services' ? null : 'services'"
+                :aria-expanded="active === 'services'"
+              >
+                Services
+                <img
+                  src="assets/images/icon-black-cheveron-right.svg"
+                  alt=""
+                  class="h-4 w-4 rotate-90 lg:group-hover/services:rotate-0 lg:transition lg:duration-300"
+                />
+              </a>
+              <div
+                class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/services:visible lg:group-hover/services:opacity-100"
+                :class="active === 'services' ? 'max-lg:block' : 'max-lg:hidden'"
+              >
+                <ul
+                  class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
+                >
+                  <span
+                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"
+                  ></span>
+                  <li>
+                    <a
+                      href="Services/services.html"
+                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="Services/service-details.html"
+                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      >Service Details</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li
+              class="group/pages relative border-b border-black/10 lg:border-0"
+            >
+              <a
+                href="#"
+                class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
+                @click.prevent="active = active === 'pages' ? null : 'pages'"
+                :aria-expanded="active === 'pages'"
+              >
+                Pages
+                <img
+                  src="assets/images/icon-black-cheveron-right.svg"
+                  alt=""
+                  class="h-4 w-4 rotate-90 lg:group-hover/pages:rotate-0 lg:transition lg:duration-300"
+                />
+              </a>
+              <div
+                class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/pages:visible lg:group-hover/pages:opacity-100"
+                :class="active === 'pages' ? 'max-lg:block' : 'max-lg:hidden'"
+              >
+                <ul
+                  class="relative min-w-[210px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
+                  x-data="{ active: null }"
+                >
+                  <span
+                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"
+                  ></span>
+
+                  <li class="group/blogs relative">
+                    <a
+                      href="#"
+                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                      @click.prevent="active = active === 'blogs' ? null : 'blogs'"
+                      :aria-expanded="active === 'blogs'"
+                    >
+                      blogs
+                      <img
+                        src="assets/images/icon-black-cheveron-right.svg"
+                        alt=""
+                        class="h-4 w-4"
+                      />
+                    </a>
+                    <div
+                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/blogs:visible lg:group-hover/blogs:opacity-100"
+                      :class="active === 'blogs' ? 'max-lg:block' : 'max-lg:hidden'"
+                    >
+                      <ul
+                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
+                      >
+                        <li>
+                          <a
+                            href="Pages/Blogs/blog.html"
+                            class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                            >blogs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Blogs/blog-details.html"
+                            class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
+                            >blog details</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="group/team relative">
+                    <a
+                      href="#"
+                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      @click.prevent="active = active === 'team' ? null : 'team'"
+                      :aria-expanded="active === 'team'"
+                    >
+                      Team
+                      <img
+                        src="assets/images/icon-black-cheveron-right.svg"
+                        alt=""
+                        class="h-4 w-4"
+                      />
+                    </a>
+                    <div
+                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/team:visible lg:group-hover/team:opacity-100"
+                      :class="active === 'team' ? 'max-lg:block' : 'max-lg:hidden'"
+                    >
+                      <ul
+                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
+                      >
+                        <li>
+                          <a
+                            href="Pages/Teams/teams.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Teams</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Teams/team-details.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Teams Details</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="group/faq relative">
+                    <a
+                      href="#"
+                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      @click.prevent="active = active === 'faq' ? null : 'faq'"
+                      :aria-expanded="active === 'faq'"
+                    >
+                      FAQ
+                      <img
+                        src="assets/images/icon-black-cheveron-right.svg"
+                        alt=""
+                        class="h-4 w-4"
+                      />
+                    </a>
+                    <div
+                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/faq:visible lg:group-hover/faq:opacity-100"
+                      :class="active === 'faq' ? 'max-lg:block' : 'max-lg:hidden'"
+                    >
+                      <ul
+                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
+                      >
+                        <li>
+                          <a
+                            href="Pages/FAQ/faq.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >FAQ-1</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/FAQ/faq-2.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >FAQ-2</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="group/portfolio relative">
+                    <a
+                      href="#"
+                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      @click.prevent="active = active === 'portfolio' ? null : 'portfolio'"
+                      :aria-expanded="active === 'portfolio'"
+                    >
+                      Portfolio
+                      <img
+                        src="assets/images/icon-black-cheveron-right.svg"
+                        alt=""
+                        class="h-4 w-4"
+                      />
+                    </a>
+                    <div
+                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/portfolio:visible lg:group-hover/portfolio:opacity-100"
+                      :class="active === 'portfolio' ? 'max-lg:block' : 'max-lg:hidden'"
+                    >
+                      <ul
+                        class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
+                      >
+                        <li>
+                          <a
+                            href="Pages/Portfolio/portfolio.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Portfolio</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Portfolio/portfolio-details.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Portfolio Details</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a
+                      href="Pages/Pricing/pricing.html"
+                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      >Pricing</a
+                    >
+                  </li>
+
+                  <li class="group/utilities relative">
+                    <a
+                      href="#"
+                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                      @click.prevent="active = active === 'utilities' ? null : 'utilities'"
+                      :aria-expanded="active === 'utilities'"
+                    >
+                      Utilities
+                      <img
+                        src="assets/images/icon-black-cheveron-right.svg"
+                        alt=""
+                        class="h-4 w-4"
+                      />
+                    </a>
+                    <div
+                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/utilities:visible lg:group-hover/utilities:opacity-100"
+                      :class="active === 'utilities' ? 'max-lg:block' : 'max-lg:hidden'"
+                    >
+                      <ul
+                        class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
+                      >
+                        <li>
+                          <a
+                            href="Pages/Utilities/error-404.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Error 404</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Utilities/login.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Login</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Utilities/signup.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Signup</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="Pages/Utilities/reset-password.html"
+                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
+                            >Reset Password</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="Contact/contact.html"
+                class="block py-3 text-base font-semibold text-[#191919] lg:py-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="relative z-[70] flex items-center gap-3 lg:gap-6">
+          <a
+            href="Pages/Utilities/login.html"
+            class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-2 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white lg:inline-flex"
+          >
+            <span
+              class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
+            ></span>
+            <span class="relative">Login</span>
+          </a>
+          <a
+            href="Pages/Utilities/signup.html"
+            class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-2 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] lg:inline-flex"
+          >
+            <span
+              class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
+            ></span>
+            <span class="relative whitespace-nowrap">Sign up free</span>
+          </a>
+          <button
+            type="button"
+            class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+            :class="{ 'max-lg:hidden': open }"
+            @click="open = !open"
+            :aria-expanded="open"
+            aria-label="Open menu"
+          >
+            <span class="block h-0.5 w-6 bg-black"></span>
+            <span class="block h-0.5 w-6 bg-black"></span>
+            <span class="block h-0.5 w-6 bg-black"></span>
+          </button>
         </div>
+      </div>
     </header>
     <!-- MEMBER-1:END header -->
 
     <main>
-        <!-- MEMBER-1:START hero | Nguyễn Văn Thái -->
-        <section id="hero" aria-label="Hero"></section>
-        <!-- MEMBER-1:END hero -->
+      <!-- MEMBER-1:START hero | Nguyễn Văn Thái -->
+      <section id="hero" aria-label="Hero">
+        <div
+          class="relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-colorLinenRuffle pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]"
+        >
+          <div class="global-container">
+            <div class="mb-14 flex flex-col items-center lg:mb-20">
+              <h1
+                class="slide-from-bottom mb-6 max-w-[510px] lg:max-w-[768px] xl:max-w-[1076px] text-8xl min-[1200px]:text-[100px] min-[1400px]:text-[120px] font-bold text-center leading-none tracking-[-2px]"
+              >
+                Simplify your SaaS solution with AI
+              </h1>
+              <p
+                class="slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]"
+              >
+                Our AI SAAS tool is a cloud-based software delivery model. It
+                helps businesses forecast demand for products and services and
+                optimize inventory management and supply chain operations.
+              </p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a
+                  href="#"
+                  class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-4 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] inline-flex"
+                >
+                  <span
+                    class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
+                  ></span>
+                  <span class="relative whitespace-nowrap"
+                    >Get started for free</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-4 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white inline-flex"
+                >
+                  <span
+                    class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
+                  ></span>
+                  <span class="relative">Learn more</span>
+                </a>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </section>
+      <!-- MEMBER-1:END hero -->
 
-        <!-- MEMBER-1:START brands | Nguyễn Văn Thái -->
-        <section id="brands" aria-label="Partner logos"></section>
-        <!-- MEMBER-1:END brands -->
+      <!-- MEMBER-1:START brands | Nguyễn Văn Thái -->
+      <section id="brands" aria-label="Partner logos"></section>
+      <!-- MEMBER-1:END brands -->
 
-        <!-- MEMBER-1:START features | Nguyễn Văn Thái -->
-        <section id="features" aria-label="Core features"></section>
-        <!-- MEMBER-1:END features -->
+      <!-- MEMBER-1:START features | Nguyễn Văn Thái -->
+      <section id="features" aria-label="Core features"></section>
+      <!-- MEMBER-1:END features -->
 
-        <!-- MEMBER-2:START audience | Nguyễn Hoàng Đạo -->
-        <section id="audience" aria-label="Accessible to a wider audience"></section>
-        <!-- MEMBER-2:END audience -->
+      <!-- MEMBER-2:START audience | Nguyễn Hoàng Đạo -->
 
-        <!-- MEMBER-2:START deploy | Nguyễn Hoàng Đạo -->
-        <section id="deploy" aria-label="Providing quick deploy solutions"></section>
-        <!-- MEMBER-2:END deploy -->
+      <section id="audience" aria-label="Accessible to a wider audience">
+        <div class="global-container w-[70%] mx-auto py-20">
+          <div class="grid items-center gap-20 md:grid-cols-2">
+            <div>
+              <img
+                src="assets/images/content-image-1.jpg"
+                alt="AI analytics dashboard with data charts"
+                class="w-full aspect-[4/3] rounded-3xl object-contain"
+              />
+            </div>
 
-        <!-- MEMBER-2:START video | Nguyễn Hoàng Đạo -->
-        <section id="video" aria-label="Video"></section>
-        <!-- MEMBER-2:END video -->
+            <div>
+              <h2 class="mb-6 text-7xl font-bold md: text-9x1">
+                Accessible to a wider audience
+              </h2>
 
-        <!-- MEMBER-2:START stats | Nguyễn Hoàng Đạo -->
-        <section id="stats" aria-label="AI-powered that streamline tasks"></section>
-        <!-- MEMBER-2:END stats -->
+              <p class="mb-4 text-lg leading-7">
+                Advanced AI capabilities accessible to a broader audience,
+                including small & medium-sized businesses and individuals who
+                may not have the resources or expertise to develop.
+              </p>
 
-        <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
-        <section id="pricing" aria-label="Pricing"></section>
-        <!-- MEMBER-3:END pricing -->
+              <p class="text-lg leading-7">
+                Advanced AI capabilities accessible to a broader audience,
+                including small & medium-sized businesses and individuals who
+                may not have the resources or expertise to develop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- MEMBER-3:START faq | Mai Thạch Anh -->
-        <section id="faq" aria-label="FAQ"></section>
-        <!-- MEMBER-3:END faq -->
+      <!-- MEMBER-2:END audience -->
 
-        <!-- MEMBER-3:START testimonials | Mai Thạch Anh -->
-        <section id="testimonials" aria-label="Testimonials"></section>
-        <!-- MEMBER-3:END testimonials -->
+      <!-- MEMBER-2:START deploy | Nguyễn Hoàng Đạo -->
+
+      <section id="deploy" aria-label="Providing quick deploy solutions">
+        <div class="global-container w-[70%] mx-auto py-20">
+          <div class="grid items-center gap-20 md:grid-cols-2">
+            <div>
+              <h2 class="mb-6 text-7xl font-bold md:text-7xl">
+                Providing quick deploy solutions
+              </h2>
+
+              <p class="mb-8 text-xl leading-10">
+                Our AI SaaS solutions can be quickly deployed, enabling users to
+                start benefiting from AI capabilities without lengthy setup and
+                development times in fast-paced industries.
+              </p>
+
+              <ul class="space-y-5">
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-black text-sm font-bold text-white"
+                    >✓</span
+                  >
+                  <span class="font-bold text-[25px]">
+                    Ready-to-use AI capabilities system
+                  </span>
+                </li>
+
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-black text-sm font-bold text-white"
+                    >✓</span
+                  >
+                  <span class="font-bold text-[25px]">
+                    Users can quickly integrate AI features
+                  </span>
+                </li>
+
+                <li class="flex items-center gap-3">
+                  <span
+                    class="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-black text-sm font-bold text-white"
+                    >✓</span
+                  >
+                  <span class="font-bold text-[25px]">
+                    Time savings translate to cost savings
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <img
+                src="assets/images/content-image-2.jpg"
+                alt="AI analytics dashboard showing traffic and data statistics"
+                class="w-full max-w-[85%] mx-auto rounded-xl"
+              />
+            </div>
+            ```
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBER-2:END deploy -->
+
+      <!-- MEMBER-2:START video | Nguyễn Hoàng Đạo -->
+      <!-- MEMBER-2:START video-stats | Nguyễn Hoàng Đạo -->
+
+      <section id="stats" aria-label="AI-powered that streamline tasks">
+        <div class="global-container w-[75%] mx-auto pt-2 pb- 10">
+          <div class="grid md:grid-cols-2 overflow-hidden rounded-3xl">
+            <!-- Hình ảnh bên trái -->
+            <div id="video-container" class="relative h-[770px] md:h-[550px]">
+              <img
+                src="assets/images/funfact-image.jpg"
+                alt="People working with an analytics dashboard"
+                class="h-full w-full object-cover"
+              />
+
+              <button
+                type="button"
+                onclick="playVideo()"
+                aria-label="Play video"
+                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black bg-white/80 font-semibold text-black transition hover:scale-110"
+              >
+                Play
+              </button>
+            </div>
+
+            <!-- Nội dung bên phải -->
+            <div
+              class="flex flex-col justify-center bg-black p-8 text-white md:p-10 lg:p-12"
+            >
+              <h2 class="mb-6 text-3xl font-bold md:text-5xl">
+                AI-powered that streamline tasks
+              </h2>
+
+              <p class="mb-10 text-base leading-7 text-gray-300">
+                As your business grows or your AI SaaS needs change, you can
+                easily adjust your subscription level to match those needs. This
+                flexibility ensures that AI remains an asset.
+              </p>
+
+              <!-- Hai chỉ số -->
+              <div class="grid grid-cols-2 gap-6">
+                <div>
+                  <p class="mb-2 text-5xl font-bold text-[#FF5733] md:text-7xl">
+                    <span class="counter" data-target="92">0</span>%
+                  </p>
+
+                  <p class="text-sm font-semibold md:text-base">
+                    Customer service inquiries
+                  </p>
+                </div>
+
+                <div>
+                  <p class="mb-2 text-5xl font-bold text-[#FF5733] md:text-7xl">
+                    <span class="counter" data-target="75">0</span>%
+                  </p>
+
+                  <p class="text-sm font-semibold md:text-base">
+                    Using financial institutions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMBER-2:END video-stats -->
+
+      <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
+      <section id="pricing" aria-label="Pricing"></section>
+      <!-- MEMBER-3:END pricing -->
+
+      <!-- MEMBER-3:START faq | Mai Thạch Anh -->
+      <section id="faq" aria-label="FAQ"></section>
+      <!-- MEMBER-3:END faq -->
+
+      <!-- MEMBER-3:START testimonials | Mai Thạch Anh -->
+      <section id="testimonials" aria-label="Testimonials"></section>
+      <!-- MEMBER-3:END testimonials -->
     </main>
 
     <!-- MEMBER-3:START footer | Mai Thạch Anh -->
@@ -329,6 +732,97 @@
     <!-- MEMBER-3:END footer -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
-</body>
 
+    <script>
+      function playVideo() {
+        const container = document.getElementById("video-container");
+
+        container.innerHTML = `
+              <iframe
+                  class="h-full w-full"
+                  src="https://www.youtube.com/embed/3nQNiWdeH2Q?autoplay=1"
+                  title="Samar video"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+
+              <button
+                  type="button"
+                  onclick="closeVideo()"
+                  aria-label="Close video"
+                  class="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-2xl text-white hover:bg-black"
+              >
+                  &times;
+              </button>
+          `;
+
+        container.classList.add("relative");
+      }
+
+      function closeVideo() {
+        const container = document.getElementById("video-container");
+
+        container.innerHTML = `
+              <img
+                  src="assets/images/funfact-image.jpg"
+                  alt="People working with an analytics dashboard"
+                  class="h-full w-full object-cover"
+              />
+
+              <button
+                  type="button"
+                  onclick="playVideo()"
+                  aria-label="Play video"
+                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border border-black bg-white"
+              >
+                  Play
+              </button>
+          `;
+      }
+
+      // Hiệu ứng đếm số phần trăm khi cuộn tới
+      const statsSection = document.getElementById("stats");
+      const counters = document.querySelectorAll(".counter");
+
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              counters.forEach((counter) => {
+                const target = Number(counter.dataset.target);
+                const duration = 1500;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                  const progress = Math.min(
+                    (currentTime - startTime) / duration,
+                    1,
+                  );
+
+                  counter.textContent = Math.floor(target * progress);
+
+                  if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                  } else {
+                    counter.textContent = target;
+                  }
+                }
+
+                counter.textContent = 0;
+                requestAnimationFrame(updateCounter);
+              });
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+        },
+      );
+
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
+    </script>
+  </body>
 </html>
