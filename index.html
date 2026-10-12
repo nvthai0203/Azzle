@@ -312,7 +312,91 @@
         <!-- MEMBER-2:END stats -->
 
         <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
-        <section id="pricing" aria-label="Pricing"></section>
+        <section id="pricing" aria-label="Pricing" class="pricing-section relative z-0 min-h-screen overflow-hidden px-5 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-14 lg:px-12 lg:pt-12">
+            <div class="relative mx-auto max-w-[1208px]">
+            <!-- Heading -->
+            <header class="mx-auto max-w-3xl text-center">
+                <h1 class="text-[42px] font-extrabold leading-[1.04] tracking-[-1.7px] sm:text-5xl md:text-6xl lg:text-[72px] lg:tracking-[-2.8px]">
+                Cost-effectively<br class="hidden sm:block" /> build any software
+                </h1>
+
+                <!-- Billing toggle -->
+                <div class="mt-8 flex justify-center sm:mt-11">
+                <div id="billingToggle" class="billing-toggle grid h-[60px] w-[304px] grid-cols-2 rounded-full border-2 border-black p-[1px]" data-billing="monthly" role="group" aria-label="Billing frequency">
+                    <button type="button" data-option="monthly" aria-pressed="true" class="billing-option relative z-10 rounded-full px-5 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500">
+                    Monthly
+                    </button>
+                    <button type="button" data-option="annual" aria-pressed="false" class="billing-option relative z-10 rounded-full px-5 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500">
+                    Annually
+                    </button>
+                </div>
+                </div>
+                <p id="billingNote" class="mt-3 min-h-5 text-sm text-neutral-500" aria-live="polite"></p>
+            </header>
+
+            <!-- Plans -->
+            <div class="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:mt-[54px] lg:grid-cols-3 lg:gap-[22px]">
+                <!-- Beginner -->
+                <article class="pricing-card flex flex-col rounded-[10px] px-7 py-8 sm:px-8 sm:py-9">
+                <div>
+                    <h2 class="text-[23px] font-bold leading-tight tracking-[-.7px]">Beginner</h2>
+                    <p class="mt-1 text-base">Up to 10 members</p>
+                </div>
+                <div class="my-5 border-t border-black/10"></div>
+                <div class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="price-value text-[58px] font-extrabold leading-none tracking-[-2px] sm:text-[68px]" data-monthly="25" data-annual="20">$25</span>
+                    <span class="price-period text-base font-semibold">/Per month</span>
+                </div>
+                <p class="mt-5 min-h-[56px] text-[15px] leading-[1.75] sm:text-base">
+                    This is an excellent option for people &amp; small businesses who are starting out.
+                </p>
+                <button type="button" data-plan="Beginner" class="plan-button mt-7 min-h-[57px] w-full rounded-full border-2 border-black px-5 text-sm font-bold">
+                    Choose the plan
+                </button>
+                </article>
+
+                <!-- Starter -->
+                <article class="pricing-card flex flex-col rounded-[10px] px-7 py-8 sm:px-8 sm:py-9">
+                <div>
+                    <h2 class="text-[23px] font-bold leading-tight tracking-[-.7px]">Starter</h2>
+                    <p class="mt-1 text-base">Up to 50 members</p>
+                </div>
+                <div class="my-5 border-t border-black/10"></div>
+                <div class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="price-value text-[58px] font-extrabold leading-none tracking-[-2px] sm:text-[68px]" data-monthly="89" data-annual="71">$89</span>
+                    <span class="price-period text-base font-semibold">/Per month</span>
+                </div>
+                <p class="mt-5 min-h-[56px] text-[15px] leading-[1.75] sm:text-base">
+                    This plan is suitable for e-commerce stores as well as professional blogs.
+                </p>
+                <button type="button" data-plan="Starter" class="plan-button mt-7 min-h-[57px] w-full rounded-full border-2 border-black px-5 text-sm font-bold">
+                    Choose the plan
+                </button>
+                </article>
+
+                <!-- Pro -->
+                <article class="pricing-card flex flex-col rounded-[10px] px-7 py-8 sm:col-span-2 sm:px-8 sm:py-9 lg:col-span-1">
+                <div>
+                    <h2 class="text-[23px] font-bold leading-tight tracking-[-.7px]">Pro</h2>
+                    <p class="mt-1 text-base">Up to 100 members</p>
+                </div>
+                <div class="my-5 border-t border-black/10"></div>
+                <div class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="price-value text-[58px] font-extrabold leading-none tracking-[-2px] sm:text-[68px]" data-monthly="199" data-annual="159">$199</span>
+                    <span class="price-period text-base font-semibold">/Per month</span>
+                </div>
+                <p class="mt-5 min-h-[56px] text-[15px] leading-[1.75] sm:text-base">
+                    Ideal for handling complicated projects enterprise-level projects, and websites.
+                </p>
+                <button type="button" data-plan="Pro" class="plan-button mt-7 min-h-[57px] w-full rounded-full border-2 border-black px-5 text-sm font-bold">
+                    Choose the plan
+                </button>
+                </article>
+            </div>
+
+            <p id="planMessage" class="mt-6 min-h-6 text-center text-sm font-medium text-neutral-700" role="status" aria-live="polite"></p>
+            </div>
+        </section>
         <!-- MEMBER-3:END pricing -->
 
         <!-- MEMBER-3:START faq | Mai Thạch Anh -->
@@ -325,7 +409,87 @@
     </main>
 
     <!-- MEMBER-3:START footer | Mai Thạch Anh -->
-    <footer id="footer"></footer>
+    <footer class="footer-shell relative z-0 mx-auto min-h-[620px] w-full max-w-[1900px] overflow-hidden rounded-t-[30px] sm:rounded-[42px]">
+      <!-- Animated headline -->
+      <div class="relative overflow-hidden pt-14 sm:pt-16 lg:pt-[108px]" aria-label="Start building software">
+        <div class="marquee-track flex w-max animate-marquee items-center whitespace-nowrap">
+          <div class="flex items-center gap-7 pr-7 text-[34px] font-extrabold leading-none tracking-[-1.4px] sm:gap-8 sm:pr-8 sm:text-5xl lg:text-[76px] lg:tracking-[-2.4px]">
+            <span aria-hidden="true" class="text-[0.8em]">✦</span><span>Start building software</span>
+          </div>
+          <div class="flex items-center gap-7 pr-7 text-[34px] font-extrabold leading-none tracking-[-1.4px] sm:gap-8 sm:pr-8 sm:text-5xl lg:text-[76px] lg:tracking-[-2.4px]" aria-hidden="true">
+            <span class="text-[0.8em]">✦</span><span>Start building software</span>
+          </div>
+          <div class="flex items-center gap-7 pr-7 text-[34px] font-extrabold leading-none tracking-[-1.4px] sm:gap-8 sm:pr-8 sm:text-5xl lg:text-[76px] lg:tracking-[-2.4px]" aria-hidden="true">
+            <span class="text-[0.8em]">✦</span><span>Start building software</span>
+          </div>
+          <div class="flex items-center gap-7 pr-7 text-[34px] font-extrabold leading-none tracking-[-1.4px] sm:gap-8 sm:pr-8 sm:text-5xl lg:text-[76px] lg:tracking-[-2.4px]" aria-hidden="true">
+            <span class="text-[0.8em]">✦</span><span>Start building software</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main footer content -->
+      <div class="mx-auto mt-16 w-[88%] max-w-[1260px] border-t border-black/10 pt-12 sm:mt-20 sm:pt-14 lg:mt-[100px] lg:pt-[94px]">
+        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-[1.55fr_.72fr_.78fr_1.35fr] lg:gap-x-10 xl:gap-x-14">
+          <!-- Brand -->
+          <section>
+            <a href="#" class="inline-flex items-center gap-1 text-[24px] font-extrabold tracking-[-.8px] transition-opacity hover:opacity-70" aria-label="Azzle home">
+              <span class="text-[25px]">✳</span><span>Azzle</span>
+            </a>
+            <p class="mt-4 max-w-[370px] text-[15px] leading-[1.9] text-black/85 sm:text-base">
+              Our mission is to harness the power of AI to solve complex business challenges &amp; decision-makers with data-driven insights, and enhance user experiences across digital platforms.
+            </p>
+            <p class="mt-6 text-[15px] sm:text-base">
+              Website: <a class="transition-colors hover:text-[#f15b2a]" href="https://www.example.com" target="_blank" rel="noreferrer">www.example.com</a>
+            </p>
+          </section>
+
+          <!-- Primary pages -->
+          <nav aria-label="Primary Pages">
+            <h2 class="mb-6 text-[17px] font-bold sm:text-[18px]">Primary Pages</h2>
+            <ul class="space-y-3 text-[15px] sm:text-base">
+              <li><a class="footer-link block" href="#home">Home</a></li>
+              <li><a class="footer-link block" href="#about">About Us</a></li>
+              <li><a class="footer-link block" href="#services">Services</a></li>
+              <li><a class="footer-link block" href="#pricing">Pricing</a></li>
+              <li><a class="footer-link block" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Utility pages -->
+          <nav aria-label="Utility Pages">
+            <h2 class="mb-6 text-[17px] font-bold sm:text-[18px]">Utility Pages</h2>
+            <ul class="space-y-3 text-[15px] sm:text-base">
+              <li><a class="footer-link block" href="#signup">Signup</a></li>
+              <li><a class="footer-link block" href="#login">Login</a></li>
+              <li><a class="footer-link block" href="#404">404 Not Found</a></li>
+              <li><a class="footer-link block" href="#password-reset">Password Reset</a></li>
+            </ul>
+          </nav>
+
+          <!-- Newsletter -->
+          <section>
+            <h2 class="mb-6 text-[17px] font-bold sm:text-[18px]">Subscribe To Our Newsletter</h2>
+            <form id="newsletterForm" class="newsletter-input flex w-full max-w-[360px] items-center rounded-full border border-black bg-white p-[4px] transition-all duration-200">
+              <label for="email" class="sr-only">Email address</label>
+              <input id="email" name="email" type="email" required placeholder="Enter your email"
+                class="min-w-0 flex-1 bg-transparent px-4 py-2 text-[15px] outline-none placeholder:text-slate-400 sm:px-5 sm:text-base" />
+              <button type="submit" aria-label="Subscribe" class="newsletter-button flex h-[42px] w-[68px] shrink-0 items-center justify-center rounded-full bg-black text-white sm:h-[44px] sm:w-[70px]">
+                <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" aria-hidden="true">
+                  <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+            <p id="newsletterMessage" class="mt-3 min-h-5 text-sm text-black/75" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-12 border-t border-black/10 py-7 text-center sm:mt-16 sm:py-9 lg:mt-[98px]">
+          <p class="text-sm text-black/90 sm:text-base">© Copyright 2023, All Rights Reserved by <a href="#" class="font-medium transition-colors hover:text-[#f15b2a]">Mthemeus</a></p>
+        </div>
+      </div>
+    </footer>
     <!-- MEMBER-3:END footer -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
