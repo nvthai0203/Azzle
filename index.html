@@ -9,10 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- alpinejs -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
 
     <!-- font Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +31,7 @@
     <title>Azzle - AI Technology & Startup HTML Template</title>
 </head>
 
-< x-data="{ open: false }" :class="{ 'overflow-hidden': open }" @keydown.escape.window="open = false"
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" @keydown.escape.window="open = false"
     @resize.window="if (window.innerWidth >= 1024) open = false">
     <!-- MEMBER-1:START header | Nguyễn Văn Thái. Chỉ sửa trong cặp START/END của mình, không format cả file. -->
     <header class="absolute inset-x-0 top-0 z-[999] bg-[#F6F4EF]">
@@ -43,12 +40,7 @@
                 <img src="assets/images/logo-dark.png" alt="Azzle" width="96" height="24">
             </a>
 
-        <div
-          x-show="open"
-          x-cloak
-          @click="open = false"
-          class="fixed inset-0 z-40 bg-black/40 lg:hidden"
-        ></div>
+            <div x-show="open" x-cloak @click="open = false" class="fixed inset-0 z-40 bg-black/40 lg:hidden"></div>
 
             <nav class="max-lg:fixed max-lg:inset-y-0 max-lg:right-0 max-lg:z-50 max-lg:flex max-lg:w-[min(100%,320px)] max-lg:translate-x-full max-lg:flex-col max-lg:overflow-y-auto max-lg:bg-white max-lg:px-6 max-lg:pb-10 max-lg:pt-20 max-lg:shadow-2xl max-lg:transition-transform max-lg:duration-300"
                 :class="{ 'max-lg:!translate-x-0': open }" aria-label="Primary">
@@ -292,352 +284,30 @@
                             class="block py-3 text-base font-semibold text-[#191919] lg:py-0">Contact</a>
                     </li>
                 </ul>
-              </div>
-            </li>
+            </nav>
 
-            <li class="border-b border-black/10 lg:border-0">
-              <a
-                href="About/about.html"
-                class="block py-3 text-base font-semibold text-[#191919] lg:py-0"
-                >About</a
-              >
-            </li>
-
-            <li
-              class="group/services relative border-b border-black/10 lg:border-0"
-            >
-              <a
-                href="#"
-                class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
-                @click.prevent="active = active === 'services' ? null : 'services'"
-                :aria-expanded="active === 'services'"
-              >
-                Services
-                <img
-                  src="assets/images/icon-black-cheveron-right.svg"
-                  alt=""
-                  class="h-4 w-4 rotate-90 lg:group-hover/services:rotate-0 lg:transition lg:duration-300"
-                />
-              </a>
-              <div
-                class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/services:visible lg:group-hover/services:opacity-100"
-                :class="active === 'services' ? 'max-lg:block' : 'max-lg:hidden'"
-              >
-                <ul
-                  class="relative min-w-[200px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
-                >
-                  <span
-                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"
-                  ></span>
-                  <li>
-                    <a
-                      href="Services/services.html"
-                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      >Services</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="Services/service-details.html"
-                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      >Service Details</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li
-              class="group/pages relative border-b border-black/10 lg:border-0"
-            >
-              <a
-                href="#"
-                class="flex items-center justify-between gap-1 py-3 text-base font-semibold text-[#191919] lg:py-0"
-                @click.prevent="active = active === 'pages' ? null : 'pages'"
-                :aria-expanded="active === 'pages'"
-              >
-                Pages
-                <img
-                  src="assets/images/icon-black-cheveron-right.svg"
-                  alt=""
-                  class="h-4 w-4 rotate-90 lg:group-hover/pages:rotate-0 lg:transition lg:duration-300"
-                />
-              </a>
-              <div
-                class="menu-dropdown lg:invisible lg:absolute lg:left-0 lg:top-full lg:z-30 lg:pt-3 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/pages:visible lg:group-hover/pages:opacity-100"
-                :class="active === 'pages' ? 'max-lg:block' : 'max-lg:hidden'"
-              >
-                <ul
-                  class="relative min-w-[210px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:shadow-none"
-                  x-data="{ active: null }"
-                >
-                  <span
-                    class="absolute -top-1.5 left-6 hidden h-3 w-3 rotate-45 bg-white lg:block"
-                  ></span>
-
-                  <li class="group/blogs relative">
-                    <a
-                      href="#"
-                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
-                      @click.prevent="active = active === 'blogs' ? null : 'blogs'"
-                      :aria-expanded="active === 'blogs'"
-                    >
-                      blogs
-                      <img
-                        src="assets/images/icon-black-cheveron-right.svg"
-                        alt=""
-                        class="h-4 w-4"
-                      />
-                    </a>
-                    <div
-                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/blogs:visible lg:group-hover/blogs:opacity-100"
-                      :class="active === 'blogs' ? 'max-lg:block' : 'max-lg:hidden'"
-                    >
-                      <ul
-                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
-                      >
-                        <li>
-                          <a
-                            href="Pages/Blogs/blog.html"
-                            class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
-                            >blogs</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Blogs/blog-details.html"
-                            class="block px-5 py-2 text-[15px] font-semibold capitalize text-black transition-colors hover:text-[#FE330A]"
-                            >blog details</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="group/team relative">
-                    <a
-                      href="#"
-                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      @click.prevent="active = active === 'team' ? null : 'team'"
-                      :aria-expanded="active === 'team'"
-                    >
-                      Team
-                      <img
-                        src="assets/images/icon-black-cheveron-right.svg"
-                        alt=""
-                        class="h-4 w-4"
-                      />
-                    </a>
-                    <div
-                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/team:visible lg:group-hover/team:opacity-100"
-                      :class="active === 'team' ? 'max-lg:block' : 'max-lg:hidden'"
-                    >
-                      <ul
-                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
-                      >
-                        <li>
-                          <a
-                            href="Pages/Teams/teams.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Teams</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Teams/team-details.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Teams Details</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="group/faq relative">
-                    <a
-                      href="#"
-                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      @click.prevent="active = active === 'faq' ? null : 'faq'"
-                      :aria-expanded="active === 'faq'"
-                    >
-                      FAQ
-                      <img
-                        src="assets/images/icon-black-cheveron-right.svg"
-                        alt=""
-                        class="h-4 w-4"
-                      />
-                    </a>
-                    <div
-                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/faq:visible lg:group-hover/faq:opacity-100"
-                      :class="active === 'faq' ? 'max-lg:block' : 'max-lg:hidden'"
-                    >
-                      <ul
-                        class="min-w-[180px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
-                      >
-                        <li>
-                          <a
-                            href="Pages/FAQ/faq.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >FAQ-1</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/FAQ/faq-2.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >FAQ-2</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="group/portfolio relative">
-                    <a
-                      href="#"
-                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      @click.prevent="active = active === 'portfolio' ? null : 'portfolio'"
-                      :aria-expanded="active === 'portfolio'"
-                    >
-                      Portfolio
-                      <img
-                        src="assets/images/icon-black-cheveron-right.svg"
-                        alt=""
-                        class="h-4 w-4"
-                      />
-                    </a>
-                    <div
-                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/portfolio:visible lg:group-hover/portfolio:opacity-100"
-                      :class="active === 'portfolio' ? 'max-lg:block' : 'max-lg:hidden'"
-                    >
-                      <ul
-                        class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
-                      >
-                        <li>
-                          <a
-                            href="Pages/Portfolio/portfolio.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Portfolio</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Portfolio/portfolio-details.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Portfolio Details</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li>
-                    <a
-                      href="Pages/Pricing/pricing.html"
-                      class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      >Pricing</a
-                    >
-                  </li>
-
-                  <li class="group/utilities relative">
-                    <a
-                      href="#"
-                      class="flex items-center justify-between gap-6 px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                      @click.prevent="active = active === 'utilities' ? null : 'utilities'"
-                      :aria-expanded="active === 'utilities'"
-                    >
-                      Utilities
-                      <img
-                        src="assets/images/icon-black-cheveron-right.svg"
-                        alt=""
-                        class="h-4 w-4"
-                      />
-                    </a>
-                    <div
-                      class="menu-dropdown lg:invisible lg:absolute lg:left-full lg:top-0 lg:z-30 lg:pl-1 lg:opacity-0 lg:transition lg:duration-300 lg:group-hover/utilities:visible lg:group-hover/utilities:opacity-100"
-                      :class="active === 'utilities' ? 'max-lg:block' : 'max-lg:hidden'"
-                    >
-                      <ul
-                        class="min-w-[190px] rounded-md bg-white py-2 shadow-[0_12px_40px_rgba(0,0,0,0.12)] max-lg:min-w-0 max-lg:bg-transparent max-lg:py-0 max-lg:pl-4 max-lg:shadow-none"
-                      >
-                        <li>
-                          <a
-                            href="Pages/Utilities/error-404.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Error 404</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Utilities/login.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Login</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Utilities/signup.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Signup</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="Pages/Utilities/reset-password.html"
-                            class="block px-5 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#FE330A]"
-                            >Reset Password</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a
-                href="Contact/contact.html"
-                class="block py-3 text-base font-semibold text-[#191919] lg:py-0"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <div class="relative z-[70] flex items-center gap-3 lg:gap-6">
-          <a
-            href="Pages/Utilities/login.html"
-            class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-2 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white lg:inline-flex"
-          >
-            <span
-              class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
-            ></span>
-            <span class="relative">Login</span>
-          </a>
-          <a
-            href="Pages/Utilities/signup.html"
-            class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-2 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] lg:inline-flex"
-          >
-            <span
-              class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"
-            ></span>
-            <span class="relative whitespace-nowrap">Sign up free</span>
-          </a>
-          <button
-            type="button"
-            class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
-            :class="{ 'max-lg:hidden': open }"
-            @click="open = !open"
-            :aria-expanded="open"
-            aria-label="Open menu"
-          >
-            <span class="block h-0.5 w-6 bg-black"></span>
-            <span class="block h-0.5 w-6 bg-black"></span>
-            <span class="block h-0.5 w-6 bg-black"></span>
-          </button>
+            <div class="relative z-[70] flex items-center gap-3 lg:gap-6">
+                <a href="Pages/Utilities/login.html"
+                    class="group relative hidden overflow-hidden rounded-full border border-[#7F8995] px-5 py-2 text-[15px] font-semibold text-black transition-colors duration-300 hover:border-[#FE330A] hover:text-white lg:inline-flex">
+                    <span
+                        class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
+                    <span class="relative">Login</span>
+                </a>
+                <a href="Pages/Utilities/signup.html"
+                    class="group relative hidden overflow-hidden rounded-full border border-black bg-black px-5 py-2 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-[#FE330A] lg:inline-flex">
+                    <span
+                        class="absolute inset-0 origin-top scale-y-0 bg-[#FE330A] transition-transform duration-300 group-hover:scale-y-100"></span>
+                    <span class="relative whitespace-nowrap">Sign up free</span>
+                </a>
+                <button type="button" class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+                    :class="{ 'max-lg:hidden': open }" @click="open = !open" :aria-expanded="open"
+                    aria-label="Open menu">
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                    <span class="block h-0.5 w-6 bg-black"></span>
+                </button>
+            </div>
         </div>
-      </div>
     </header>
     <!-- MEMBER-1:END header -->
 
@@ -701,9 +371,9 @@
         </section>
         <!-- MEMBER-1:END hero -->
 
-      <!-- MEMBER-1:START brands | Nguyễn Văn Thái -->
-      <section id="brands" aria-label="Partner logos"></section>
-      <!-- MEMBER-1:END brands -->
+        <!-- MEMBER-1:START brands | Nguyễn Văn Thái -->
+        <section id="brands" aria-label="Partner logos"></section>
+        <!-- MEMBER-1:END brands -->
 
         <!-- MEMBER-1:START features | Nguyễn Văn Thái -->
         <section id="features" aria-label="Core features">
@@ -975,855 +645,581 @@
 
         <!-- MEMBER-2:END video-stats -->
 
-      <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
-      <section
-        aria-label="Pricing"
-        class="relative isolate overflow-hidden bg-white px-5 pt-[22px] pb-[68px] min-[681px]:max-[1199px]:pt-8 min-[1200px]:px-8 min-[1200px]:pt-16 min-[1200px]:pb-24 max-[680px]:px-[18px] max-[680px]:pt-[38px] max-[680px]:pb-[52px]"
-        id="pricing"
-      >
-        <div
-          aria-hidden="true"
-          class="pointer-events-none absolute z-0 top-[-160px] left-[-165px] h-[340px] w-[390px] bg-[radial-gradient(ellipse_at_38%_37%,rgba(255,86,28,.98)_0%,rgba(255,105,47,.84)_34%,rgba(255,153,111,.38)_58%,rgba(255,255,255,0)_76%)] blur-[9px] min-[1200px]:top-[-205px] min-[1200px]:left-[-195px] min-[1200px]:h-[450px] min-[1200px]:w-[540px] min-[1200px]:blur-[12px] max-[680px]:top-[-145px] max-[680px]:left-[-185px]"
-        ></div>
-        <div
-          class="section-wrap relative z-10 mx-auto w-full max-w-[780px] min-[681px]:max-[1199px]:max-w-[1000px] min-[1200px]:max-w-[1208px]"
-        >
-          <header class="text-center">
-            <h1
-              class="section-heading m-0 text-[clamp(36px,3.05vw,48px)] font-extrabold leading-[.99] tracking-[-1.8px] min-[681px]:max-[1199px]:text-[clamp(48px,5.2vw,64px)] min-[1200px]:text-[72px] min-[1200px]:leading-[.99] min-[1200px]:tracking-[-2.8px] max-[680px]:text-[clamp(34px,8.5vw,46px)] max-[680px]:tracking-[-1.4px]"
-            >
-              Cost-effectively<br />build any software
-            </h1>
-            <div class="mt-[29px] flex justify-center min-[1200px]:mt-[50px]">
-              <div
-                aria-label="Billing frequency"
-                class="billing-toggle mx-auto grid h-[38px] w-[194px] grid-cols-2 rounded-full border-[1.3px] border-[#111] bg-white/[.92] p-px min-[1200px]:h-[58px] min-[1200px]:w-[294px] min-[1200px]:border-2"
-                data-billing="monthly"
-                id="billingToggle"
-                role="group"
-              >
-                <button
-                  aria-pressed="true"
-                  class="billing-option cursor-pointer rounded-full border-0 bg-transparent text-[10px] font-medium text-[#111] transition-[color,background-color,transform] duration-[220ms] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] [&amp;[aria-pressed=true]]:bg-black [&amp;[aria-pressed=true]]:text-white min-[1200px]:text-sm"
-                  data-option="monthly"
-                  type="button"
-                >
-                  Monthly
-                </button>
-                <button
-                  aria-pressed="false"
-                  class="billing-option cursor-pointer rounded-full border-0 bg-transparent text-[10px] font-medium text-[#111] transition-[color,background-color,transform] duration-[220ms] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] [&amp;[aria-pressed=true]]:bg-black [&amp;[aria-pressed=true]]:text-white min-[1200px]:text-sm"
-                  data-option="annual"
-                  type="button"
-                >
-                  Annually
-                </button>
-              </div>
+        <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
+        <section aria-label="Pricing"
+            class="relative isolate overflow-hidden bg-white px-5 pt-[22px] pb-[68px] min-[681px]:max-[1199px]:pt-8 min-[1200px]:px-8 min-[1200px]:pt-16 min-[1200px]:pb-24 max-[680px]:px-[18px] max-[680px]:pt-[38px] max-[680px]:pb-[52px]"
+            id="pricing">
+            <div aria-hidden="true"
+                class="pointer-events-none absolute z-0 top-[-160px] left-[-165px] h-[340px] w-[390px] bg-[radial-gradient(ellipse_at_38%_37%,rgba(255,86,28,.98)_0%,rgba(255,105,47,.84)_34%,rgba(255,153,111,.38)_58%,rgba(255,255,255,0)_76%)] blur-[9px] min-[1200px]:top-[-205px] min-[1200px]:left-[-195px] min-[1200px]:h-[450px] min-[1200px]:w-[540px] min-[1200px]:blur-[12px] max-[680px]:top-[-145px] max-[680px]:left-[-185px]">
             </div>
-            <p aria-live="polite" class="sr-only" id="billingNote">
-              Monthly billing selected.
-            </p>
-          </header>
-          <div
-            class="pricing-grid mt-[47px] grid grid-cols-3 gap-[14px] min-[1200px]:mx-auto min-[1200px]:mt-[72px] min-[1200px]:w-full min-[1200px]:max-w-[1168px] min-[1200px]:gap-[22px] min-[681px]:max-[1199px]:mt-[54px] min-[681px]:max-[1199px]:gap-4 max-[680px]:mx-auto max-[680px]:mt-[35px] max-[680px]:grid-cols-1 max-[680px]:max-w-[420px] max-[680px]:gap-[14px]"
-          >
-            <article
-              class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5"
-            >
-              <div>
-                <h2
-                  class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]"
-                >
-                  Beginner
-                </h2>
-                <p
-                  class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]"
-                >
-                  Up to 10 members
-                </p>
-              </div>
-              <div
-                class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4"
-              ></div>
-              <div
-                class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]"
-              >
-                <span
-                  class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
-                  data-annual="240"
-                  data-monthly="25"
-                  >$25</span
-                >
-                <span
-                  class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                  >/Per month</span
-                >
-              </div>
-              <p
-                class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-              >
-                This is an excellent option for people &amp; small businesses
-                who are starting out.
-              </p>
-              <button
-                class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                data-plan="Beginner"
-                type="button"
-              >
-                Choose the plan
-              </button>
-            </article>
-            <article
-              class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5"
-            >
-              <div>
-                <h2
-                  class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]"
-                >
-                  Starter
-                </h2>
-                <p
-                  class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]"
-                >
-                  Up to 50 members
-                </p>
-              </div>
-              <div
-                class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4"
-              ></div>
-              <div
-                class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]"
-              >
-                <span
-                  class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
-                  data-annual="960"
-                  data-monthly="89"
-                  >$89</span
-                >
-                <span
-                  class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                  >/Per month</span
-                >
-              </div>
-              <p
-                class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-              >
-                This plan is suitable for e-commerce stores as well as
-                professional blogs.
-              </p>
-              <button
-                class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                data-plan="Starter"
-                type="button"
-              >
-                Choose the plan
-              </button>
-            </article>
-            <article
-              class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5"
-            >
-              <div>
-                <h2
-                  class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]"
-                >
-                  Pro
-                </h2>
-                <p
-                  class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]"
-                >
-                  Up to 100 members
-                </p>
-              </div>
-              <div
-                class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4"
-              ></div>
-              <div
-                class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]"
-              >
-                <span
-                  class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
-                  data-annual="1800"
-                  data-monthly="199"
-                  >$199</span
-                >
-                <span
-                  class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                  >/Per month</span
-                >
-              </div>
-              <p
-                class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-              >
-                Ideal for handling complicated projects, enterprise-level
-                projects, and websites.
-              </p>
-              <button
-                class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-                data-plan="Pro"
-                type="button"
-              >
-                Choose the plan
-              </button>
-            </article>
-          </div>
-          <p
-            aria-live="polite"
-            class="plan-message mt-3 mb-[-25px] min-h-[18px] text-center text-[11px] text-[#444] min-[1200px]:mt-[18px] min-[1200px]:mb-[-34px] min-[1200px]:min-h-[22px] min-[1200px]:text-sm"
-            id="planMessage"
-            role="status"
-          ></p>
-        </div>
-      </section>
-      <!-- MEMBER-3:END pricing -->
+            <div
+                class="section-wrap relative z-10 mx-auto w-full max-w-[780px] min-[681px]:max-[1199px]:max-w-[1000px] min-[1200px]:max-w-[1208px]">
+                <header class="text-center">
+                    <h1
+                        class="section-heading m-0 text-[clamp(36px,3.05vw,48px)] font-extrabold leading-[.99] tracking-[-1.8px] min-[681px]:max-[1199px]:text-[clamp(48px,5.2vw,64px)] min-[1200px]:text-[72px] min-[1200px]:leading-[.99] min-[1200px]:tracking-[-2.8px] max-[680px]:text-[clamp(34px,8.5vw,46px)] max-[680px]:tracking-[-1.4px]">
+                        Cost-effectively<br />build any software
+                    </h1>
+                    <div class="mt-[29px] flex justify-center min-[1200px]:mt-[50px]">
+                        <div aria-label="Billing frequency"
+                            class="billing-toggle mx-auto grid h-[38px] w-[194px] grid-cols-2 rounded-full border-[1.3px] border-[#111] bg-white/[.92] p-px min-[1200px]:h-[58px] min-[1200px]:w-[294px] min-[1200px]:border-2"
+                            data-billing="monthly" id="billingToggle" role="group">
+                            <button aria-pressed="true"
+                                class="billing-option cursor-pointer rounded-full border-0 bg-transparent text-[10px] font-medium text-[#111] transition-[color,background-color,transform] duration-[220ms] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] [&amp;[aria-pressed=true]]:bg-black [&amp;[aria-pressed=true]]:text-white min-[1200px]:text-sm"
+                                data-option="monthly" type="button">
+                                Monthly
+                            </button>
+                            <button aria-pressed="false"
+                                class="billing-option cursor-pointer rounded-full border-0 bg-transparent text-[10px] font-medium text-[#111] transition-[color,background-color,transform] duration-[220ms] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] [&amp;[aria-pressed=true]]:bg-black [&amp;[aria-pressed=true]]:text-white min-[1200px]:text-sm"
+                                data-option="annual" type="button">
+                                Annually
+                            </button>
+                        </div>
+                    </div>
+                    <p aria-live="polite" class="sr-only" id="billingNote">
+                        Monthly billing selected.
+                    </p>
+                </header>
+                <div
+                    class="pricing-grid mt-[47px] grid grid-cols-3 gap-[14px] min-[1200px]:mx-auto min-[1200px]:mt-[72px] min-[1200px]:w-full min-[1200px]:max-w-[1168px] min-[1200px]:gap-[22px] min-[681px]:max-[1199px]:mt-[54px] min-[681px]:max-[1199px]:gap-4 max-[680px]:mx-auto max-[680px]:mt-[35px] max-[680px]:grid-cols-1 max-[680px]:max-w-[420px] max-[680px]:gap-[14px]">
+                    <article
+                        class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5">
+                        <div>
+                            <h2
+                                class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]">
+                                Beginner
+                            </h2>
+                            <p
+                                class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]">
+                                Up to 10 members
+                            </p>
+                        </div>
+                        <div
+                            class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4">
+                        </div>
+                        <div
+                            class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]">
+                            <span
+                                class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
+                                data-annual="240" data-monthly="25">$25</span>
+                            <span
+                                class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]">/Per
+                                month</span>
+                        </div>
+                        <p
+                            class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                            This is an excellent option for people &amp; small businesses
+                            who are starting out.
+                        </p>
+                        <button
+                            class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
+                            data-plan="Beginner" type="button">
+                            Choose the plan
+                        </button>
+                    </article>
+                    <article
+                        class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5">
+                        <div>
+                            <h2
+                                class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]">
+                                Starter
+                            </h2>
+                            <p
+                                class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]">
+                                Up to 50 members
+                            </p>
+                        </div>
+                        <div
+                            class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4">
+                        </div>
+                        <div
+                            class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]">
+                            <span
+                                class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
+                                data-annual="960" data-monthly="89">$89</span>
+                            <span
+                                class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]">/Per
+                                month</span>
+                        </div>
+                        <p
+                            class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                            This plan is suitable for e-commerce stores as well as
+                            professional blogs.
+                        </p>
+                        <button
+                            class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
+                            data-plan="Starter" type="button">
+                            Choose the plan
+                        </button>
+                    </article>
+                    <article
+                        class="pricing-card flex min-w-0 min-h-[260px] flex-col rounded-[6px] bg-[#f0ebe4] px-6 pt-[25px] pb-[23px] transition-[transform,box-shadow] duration-[250ms] ease-out hover:-translate-y-[3px] hover:shadow-[0_12px_26px_rgba(0,0,0,.07)] min-[1200px]:min-h-[392px] min-[1200px]:rounded-lg min-[1200px]:px-9 min-[1200px]:pt-9 min-[1200px]:pb-[34px] min-[681px]:max-[1199px]:min-h-[320px] min-[681px]:max-[1199px]:px-6 min-[681px]:max-[1199px]:pt-7 min-[681px]:max-[1199px]:pb-6 max-[680px]:min-h-[235px] max-[680px]:px-[23px] max-[680px]:pt-[23px] max-[680px]:pb-5">
+                        <div>
+                            <h2
+                                class="plan-title m-0 text-base font-extrabold leading-[1.2] tracking-[-.45px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.7px] min-[681px]:max-[1199px]:text-[21px]">
+                                Pro
+                            </h2>
+                            <p
+                                class="plan-members mt-[3px] mb-0 text-[10px] leading-[1.4] min-[1200px]:mt-[5px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-sm max-[680px]:text-[11px]">
+                                Up to 100 members
+                            </p>
+                        </div>
+                        <div
+                            class="plan-rule my-[14px] border-t border-black/[.08] min-[1200px]:mt-[22px] min-[1200px]:mb-4">
+                        </div>
+                        <div
+                            class="price-line flex min-w-0 items-baseline gap-1 whitespace-nowrap min-[1200px]:gap-[5px]">
+                            <span
+                                class="price-value text-[47px] font-extrabold leading-[.98] tracking-[-2px] min-[1200px]:text-[68px] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(44px,5vw,60px)] max-[680px]:text-[46px]"
+                                data-annual="1800" data-monthly="199">$199</span>
+                            <span
+                                class="price-period text-[10px] font-semibold tracking-[-.2px] min-[1200px]:text-sm min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]">/Per
+                                month</span>
+                        </div>
+                        <p
+                            class="plan-description my-[12px] mb-4 text-[10.5px] leading-[1.6] min-[1200px]:mt-[18px] min-[1200px]:mb-6 min-[1200px]:text-base min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                            Ideal for handling complicated projects, enterprise-level
+                            projects, and websites.
+                        </p>
+                        <button
+                            class="plan-button mt-auto min-h-9 w-full cursor-pointer rounded-full border-[1.3px] border-[#111] bg-transparent px-[10px] py-2 text-[10px] font-extrabold transition-[color,background-color,transform] duration-[220ms] hover:bg-black hover:text-white active:scale-[.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[54px] min-[1200px]:border-2 min-[1200px]:px-[18px] min-[1200px]:py-3 min-[1200px]:text-[13px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
+                            data-plan="Pro" type="button">
+                            Choose the plan
+                        </button>
+                    </article>
+                </div>
+                <p aria-live="polite"
+                    class="plan-message mt-3 mb-[-25px] min-h-[18px] text-center text-[11px] text-[#444] min-[1200px]:mt-[18px] min-[1200px]:mb-[-34px] min-[1200px]:min-h-[22px] min-[1200px]:text-sm"
+                    id="planMessage" role="status"></p>
+            </div>
+        </section>
+        <!-- MEMBER-3:END pricing -->
 
-      <!-- MEMBER-3:START faq | Mai Thạch Anh -->
-      <section
-        aria-label="Frequently asked questions"
-        class="bg-white px-5 pt-5 pb-[68px] min-[1200px]:px-8 min-[1200px]:pt-[100px] min-[1200px]:pb-[112px] min-[681px]:max-[1199px]:pt-[72px] min-[681px]:max-[1199px]:pb-20 max-[680px]:px-5 max-[680px]:pt-[38px] max-[680px]:pb-[52px]"
-        id="faq"
-      >
-        <div
-          class="section-wrap faq-layout mx-auto grid w-full max-w-[780px] grid-cols-[minmax(0,1.16fr)_minmax(0,.94fr)] items-start gap-[50px] min-[1200px]:max-w-[1300px] min-[1200px]:grid-cols-[minmax(0,1.12fr)_minmax(0,.88fr)] min-[1200px]:gap-[72px] min-[681px]:max-[1199px]:max-w-[1000px] min-[681px]:max-[1199px]:gap-9 max-[680px]:grid-cols-1 max-[680px]:gap-9"
-        >
-          <div class="fade-up">
-            <h2
-              class="faq-heading m-0 max-w-[390px] text-[clamp(36px,3vw,47px)] font-extrabold leading-[.99] tracking-[-1.8px] min-[1200px]:max-w-[680px] min-[1200px]:text-[76px] min-[1200px]:leading-[1.04] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(42px,5.2vw,60px)] max-[680px]:text-[clamp(36px,9vw,46px)]"
-            >
-              Freely ask us for<br class="hidden sm:block" />
-              more information
-            </h2>
-            <p
-              class="faq-intro mt-[17px] max-w-[400px] text-xs leading-[1.55] text-[#252525] min-[1200px]:mt-6 min-[1200px]:max-w-[650px] min-[1200px]:text-lg min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[15px] max-[680px]:text-[13px]"
-            >
-              Our AI SaaS solutions can be quickly deployed, enabling users to
-              start benefiting from AI capabilities without lengthy setup and
-              development times in fast-paced industries.
-            </p>
-            <button
-              class="ask-button mt-[26px] inline-flex min-h-9 cursor-pointer items-center justify-center rounded-full border border-black bg-black px-[17px] text-[10px] font-bold text-white transition-[background-color,color,transform] duration-200 hover:border-[#ff5b22] hover:bg-[#ff5b22] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:mt-[42px] min-[1200px]:min-h-[59px] min-[1200px]:px-7 min-[1200px]:text-sm"
-              id="askQuestions"
-              type="button"
-            >
-              Ask you questions
-            </button>
-            <p
-              aria-live="polite"
-              class="ask-message mt-[9px] mb-0 min-h-4 text-[10px] text-[#555] min-[1200px]:mt-3 min-[1200px]:min-h-5 min-[1200px]:text-[13px]"
-              id="askMessage"
-              role="status"
-            ></p>
-          </div>
-          <div
-            class="faq-list fade-up pt-px min-[1200px]:pt-0.5 [animation-delay:120ms]"
-            id="faqList"
-          >
-            <article class="faq-item border-b border-black/[.14]">
-              <h3>
-                <button
-                  aria-controls="faq-panel-1"
-                  aria-expanded="true"
-                  class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base"
-                  id="faq-trigger-1"
-                  type="button"
-                >
-                  <span>How do I start AI SaaS?</span
-                  ><span
-                    aria-hidden="true"
-                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                  ></span>
-                </button>
-              </h3>
-              <div
-                aria-labelledby="faq-trigger-1"
-                class="faq-panel is-open grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
-                id="faq-panel-1"
-                role="region"
-              >
-                <div class="faq-panel-inner overflow-hidden">
-                  <p
-                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-3px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Go to our official website and create an account. You'll
-                    need to provide some basic information and agree to our
-                    terms and conditions.
-                  </p>
+        <!-- MEMBER-3:START faq | Mai Thạch Anh -->
+        <section aria-label="Frequently asked questions"
+            class="bg-white px-5 pt-5 pb-[68px] min-[1200px]:px-8 min-[1200px]:pt-[100px] min-[1200px]:pb-[112px] min-[681px]:max-[1199px]:pt-[72px] min-[681px]:max-[1199px]:pb-20 max-[680px]:px-5 max-[680px]:pt-[38px] max-[680px]:pb-[52px]"
+            id="faq">
+            <div
+                class="section-wrap faq-layout mx-auto grid w-full max-w-[780px] grid-cols-[minmax(0,1.16fr)_minmax(0,.94fr)] items-start gap-[50px] min-[1200px]:max-w-[1300px] min-[1200px]:grid-cols-[minmax(0,1.12fr)_minmax(0,.88fr)] min-[1200px]:gap-[72px] min-[681px]:max-[1199px]:max-w-[1000px] min-[681px]:max-[1199px]:gap-9 max-[680px]:grid-cols-1 max-[680px]:gap-9">
+                <div class="fade-up">
+                    <h2
+                        class="faq-heading m-0 max-w-[390px] text-[clamp(36px,3vw,47px)] font-extrabold leading-[.99] tracking-[-1.8px] min-[1200px]:max-w-[680px] min-[1200px]:text-[76px] min-[1200px]:leading-[1.04] min-[1200px]:tracking-[-2.6px] min-[681px]:max-[1199px]:text-[clamp(42px,5.2vw,60px)] max-[680px]:text-[clamp(36px,9vw,46px)]">
+                        Freely ask us for<br class="hidden sm:block" />
+                        more information
+                    </h2>
+                    <p
+                        class="faq-intro mt-[17px] max-w-[400px] text-xs leading-[1.55] text-[#252525] min-[1200px]:mt-6 min-[1200px]:max-w-[650px] min-[1200px]:text-lg min-[1200px]:leading-[1.65] min-[681px]:max-[1199px]:text-[15px] max-[680px]:text-[13px]">
+                        Our AI SaaS solutions can be quickly deployed, enabling users to
+                        start benefiting from AI capabilities without lengthy setup and
+                        development times in fast-paced industries.
+                    </p>
+                    <button
+                        class="ask-button mt-[26px] inline-flex min-h-9 cursor-pointer items-center justify-center rounded-full border border-black bg-black px-[17px] text-[10px] font-bold text-white transition-[background-color,color,transform] duration-200 hover:border-[#ff5b22] hover:bg-[#ff5b22] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:mt-[42px] min-[1200px]:min-h-[59px] min-[1200px]:px-7 min-[1200px]:text-sm"
+                        id="askQuestions" type="button">
+                        Ask you questions
+                    </button>
+                    <p aria-live="polite"
+                        class="ask-message mt-[9px] mb-0 min-h-4 text-[10px] text-[#555] min-[1200px]:mt-3 min-[1200px]:min-h-5 min-[1200px]:text-[13px]"
+                        id="askMessage" role="status"></p>
                 </div>
-              </div>
-            </article>
-            <article class="faq-item border-b border-black/[.14]">
-              <h3>
-                <button
-                  aria-controls="faq-panel-2"
-                  aria-expanded="false"
-                  class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base pt-[13px] min-[1200px]:pt-[22px]"
-                  id="faq-trigger-2"
-                  type="button"
-                >
-                  <span>Can I customize AI SaaS solutions?</span
-                  ><span
-                    aria-hidden="true"
-                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                  ></span>
-                </button>
-              </h3>
-              <div
-                aria-labelledby="faq-trigger-2"
-                class="faq-panel grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
-                id="faq-panel-2"
-                role="region"
-              >
-                <div class="faq-panel-inner overflow-hidden">
-                  <p
-                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-1px] min-[1200px]:mt-[-2px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Yes. You can configure features, workflows, integrations,
-                    and user permissions to fit your team's needs. Available
-                    options depend on your selected plan.
-                  </p>
+                <div class="faq-list fade-up pt-px min-[1200px]:pt-0.5 [animation-delay:120ms]" id="faqList">
+                    <article class="faq-item border-b border-black/[.14]">
+                        <h3>
+                            <button aria-controls="faq-panel-1" aria-expanded="true"
+                                class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base"
+                                id="faq-trigger-1" type="button">
+                                <span>How do I start AI SaaS?</span><span aria-hidden="true"
+                                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"></span><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"></span></span>
+                            </button>
+                        </h3>
+                        <div aria-labelledby="faq-trigger-1"
+                            class="faq-panel is-open grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
+                            id="faq-panel-1" role="region">
+                            <div class="faq-panel-inner overflow-hidden">
+                                <p
+                                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-3px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Go to our official website and create an account. You'll
+                                    need to provide some basic information and agree to our
+                                    terms and conditions.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="faq-item border-b border-black/[.14]">
+                        <h3>
+                            <button aria-controls="faq-panel-2" aria-expanded="false"
+                                class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base pt-[13px] min-[1200px]:pt-[22px]"
+                                id="faq-trigger-2" type="button">
+                                <span>Can I customize AI SaaS solutions?</span><span aria-hidden="true"
+                                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"></span><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"></span></span>
+                            </button>
+                        </h3>
+                        <div aria-labelledby="faq-trigger-2"
+                            class="faq-panel grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
+                            id="faq-panel-2" role="region">
+                            <div class="faq-panel-inner overflow-hidden">
+                                <p
+                                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-1px] min-[1200px]:mt-[-2px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Yes. You can configure features, workflows, integrations,
+                                    and user permissions to fit your team's needs. Available
+                                    options depend on your selected plan.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="faq-item border-b border-black/[.14]">
+                        <h3>
+                            <button aria-controls="faq-panel-3" aria-expanded="false"
+                                class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base pt-[13px] min-[1200px]:pt-[22px]"
+                                id="faq-trigger-3" type="button">
+                                <span>How can AI benefit my business?</span><span aria-hidden="true"
+                                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"></span><span
+                                        class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"></span></span>
+                            </button>
+                        </h3>
+                        <div aria-labelledby="faq-trigger-3"
+                            class="faq-panel grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
+                            id="faq-panel-3" role="region">
+                            <div class="faq-panel-inner overflow-hidden">
+                                <p
+                                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-1px] min-[1200px]:mt-[-2px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    AI can help automate repetitive tasks, surface insights from
+                                    data, improve customer support, and give your team more time
+                                    to focus on high-value work.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-              </div>
-            </article>
-            <article class="faq-item border-b border-black/[.14]">
-              <h3>
-                <button
-                  aria-controls="faq-panel-3"
-                  aria-expanded="false"
-                  class="faq-trigger group flex min-h-12 w-full cursor-pointer items-start justify-between gap-4 border-0 bg-transparent pb-[13px] text-left text-base font-extrabold leading-[1.3] tracking-[-.45px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:min-h-[68px] min-[1200px]:gap-6 min-[1200px]:pb-[22px] min-[1200px]:text-[26px] min-[1200px]:leading-[1.3] min-[1200px]:tracking-[-.55px] min-[681px]:max-[1199px]:text-[19px] max-[680px]:text-base pt-[13px] min-[1200px]:pt-[22px]"
-                  id="faq-trigger-3"
-                  type="button"
-                >
-                  <span>How can AI benefit my business?</span
-                  ><span
-                    aria-hidden="true"
-                    class="relative mt-[3px] h-[14px] w-[14px] shrink-0 min-[1200px]:mt-[5px] min-[1200px]:h-5 min-[1200px]:w-5"
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-current min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                    ><span
-                      class="absolute left-1/2 top-1/2 h-[1.5px] w-[11px] -translate-x-1/2 -translate-y-1/2 rotate-90 rounded-sm bg-current transition-transform duration-200 group-aria-expanded:rotate-0 min-[1200px]:h-[2px] min-[1200px]:w-4"
-                    ></span
-                  ></span>
-                </button>
-              </h3>
-              <div
-                aria-labelledby="faq-trigger-3"
-                class="faq-panel grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-[280ms] ease-in-out [&amp;.is-open]:grid-rows-[1fr] [&amp;.is-open]:opacity-100"
-                id="faq-panel-3"
-                role="region"
-              >
-                <div class="faq-panel-inner overflow-hidden">
-                  <p
-                    class="mb-[14px] mr-[18px] max-w-[310px] text-[10.5px] leading-[1.75] text-[#252525] mt-[-1px] min-[1200px]:mt-[-2px] min-[1200px]:mb-[22px] min-[1200px]:mr-6 min-[1200px]:max-w-[540px] min-[1200px]:text-base min-[1200px]:leading-[1.8] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    AI can help automate repetitive tasks, surface insights from
-                    data, improve customer support, and give your team more time
-                    to focus on high-value work.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- MEMBER-3:END faq -->
+            </div>
+        </section>
+        <!-- MEMBER-3:END faq -->
 
-      <!-- MEMBER-3:START testimonials | Mai Thạch Anh -->
-      <section
-        aria-label="Testimonials"
-        class="bg-black px-5 pt-[76px] pb-[78px] text-white min-[1200px]:px-8 min-[1200px]:pt-[42px] min-[1200px]:pb-20 min-[681px]:max-[1199px]:pt-[58px] max-[680px]:px-[18px] max-[680px]:pt-[60px] max-[680px]:pb-[60px]"
-        id="testimonials"
-      >
-        <div
-          class="section-wrap mx-auto w-full max-w-[780px] min-[1200px]:max-w-[1300px] min-[681px]:max-[1199px]:max-w-[1000px]"
-        >
-          <h2
-            class="testimonials-heading m-0 text-center text-[45px] font-extrabold leading-[1.02] tracking-[-1.6px] min-[1200px]:text-[68px] min-[1200px]:leading-[1.04] min-[1200px]:tracking-[-2px] min-[681px]:max-[1199px]:text-[clamp(42px,5.2vw,58px)] max-[680px]:text-[clamp(34px,8vw,43px)] max-[680px]:tracking-[-1.2px]"
-          >
-            Positive feedback<br />from our users
-          </h2>
-          <div
-            class="testimonials-grid mx-auto mt-12 grid w-full grid-cols-3 gap-[14px] min-[1200px]:mt-[76px] min-[1200px]:max-w-[1300px] min-[1200px]:gap-[22px] min-[681px]:max-[1199px]:mt-[50px] min-[681px]:max-[1199px]:gap-[15px] max-[680px]:mt-[34px] max-[680px]:grid-cols-1 max-[680px]:max-w-[420px]"
-          >
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “This AI SaaS tool has revolutionized the way we process and
-                analyze data. This is a game-changer for our business.”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-1.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Max Weber
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    HR Manager
-                  </p>
+        <!-- MEMBER-3:START testimonials | Mai Thạch Anh -->
+        <section aria-label="Testimonials"
+            class="bg-black px-5 pt-[76px] pb-[78px] text-white min-[1200px]:px-8 min-[1200px]:pt-[42px] min-[1200px]:pb-20 min-[681px]:max-[1199px]:pt-[58px] max-[680px]:px-[18px] max-[680px]:pt-[60px] max-[680px]:pb-[60px]"
+            id="testimonials">
+            <div
+                class="section-wrap mx-auto w-full max-w-[780px] min-[1200px]:max-w-[1300px] min-[681px]:max-[1199px]:max-w-[1000px]">
+                <h2
+                    class="testimonials-heading m-0 text-center text-[45px] font-extrabold leading-[1.02] tracking-[-1.6px] min-[1200px]:text-[68px] min-[1200px]:leading-[1.04] min-[1200px]:tracking-[-2px] min-[681px]:max-[1199px]:text-[clamp(42px,5.2vw,58px)] max-[680px]:text-[clamp(34px,8vw,43px)] max-[680px]:tracking-[-1.2px]">
+                    Positive feedback<br />from our users
+                </h2>
+                <div
+                    class="testimonials-grid mx-auto mt-12 grid w-full grid-cols-3 gap-[14px] min-[1200px]:mt-[76px] min-[1200px]:max-w-[1300px] min-[1200px]:gap-[22px] min-[681px]:max-[1199px]:mt-[50px] min-[681px]:max-[1199px]:gap-[15px] max-[680px]:mt-[34px] max-[680px]:grid-cols-1 max-[680px]:max-w-[420px]">
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “This AI SaaS tool has revolutionized the way we process and
+                            analyze data. This is a game-changer for our business.”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-1.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Max Weber
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    HR Manager
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “It answers immediately, and we've seen a significant reduction
+                            in response time. Our customers love it and so do we!”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-2.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Douglas Smith
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    Businessman
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “It is accurate, fast and supports multiple languages support.
+                            It is a must for any international business success.”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-3.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Abraham Maslo
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    Founder @ Marketing Company
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “Security is a top concern for us, and AI SaaS takes it
+                            seriously. It's a reassuring layer of protection for our
+                            organization.”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-4.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Jack Fayol
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    HR Manager
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “We were concerned about integrating their APIs. They were well
+                            documented, and their support team was super cool.”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-5.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Karen Lynn
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    Software Engineer
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]">
+                        <p aria-label="5 out of 5 stars"
+                            class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl">
+                            ★★★★★
+                        </p>
+                        <p
+                            class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs">
+                            “The return on investment has exceeded our expectations. It's an
+                            investment in the future of our business.”
+                        </p>
+                        <div class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]">
+                            <img alt=""
+                                class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
+                                loading="lazy" src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-6.jpg" />
+                            <div>
+                                <p
+                                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs">
+                                    Henry Ochi
+                                </p>
+                                <p
+                                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]">
+                                    Bank Manager
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-              </div>
-            </article>
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “It answers immediately, and we've seen a significant reduction
-                in response time. Our customers love it and so do we!”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-2.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Douglas Smith
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    Businessman
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “It is accurate, fast and supports multiple languages support.
-                It is a must for any international business success.”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-3.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Abraham Maslo
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    Founder @ Marketing Company
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “Security is a top concern for us, and AI SaaS takes it
-                seriously. It's a reassuring layer of protection for our
-                organization.”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-4.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Jack Fayol
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    HR Manager
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “We were concerned about integrating their APIs. They were well
-                documented, and their support team was super cool.”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-5.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Karen Lynn
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    Software Engineer
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article
-              class="testimonial-card flex min-w-0 min-h-[181px] flex-col rounded-[6px] border border-[#232323] bg-[#030303] px-[18px] pt-4 pb-[17px] transition-[border-color,transform,background-color] duration-[220ms] hover:-translate-y-[3px] hover:border-[#4a4a4a] hover:bg-[#080808] min-[1200px]:min-h-[271px] min-[1200px]:rounded-lg min-[1200px]:px-7 min-[1200px]:pt-[27px] min-[1200px]:pb-[26px] min-[681px]:max-[1199px]:min-h-[220px] min-[681px]:max-[1199px]:p-5 max-[680px]:min-h-[170px] max-[680px]:p-[19px]"
-            >
-              <p
-                aria-label="5 out of 5 stars"
-                class="testimonial-stars m-0 text-[19px] leading-none tracking-[1px] text-[#ff5b22] min-[1200px]:text-[30px] min-[1200px]:tracking-[1.2px] min-[681px]:max-[1199px]:text-2xl"
-              >
-                ★★★★★
-              </p>
-              <p
-                class="testimonial-quote my-[17px] mb-[13px] min-h-[52px] text-[10.5px] leading-[1.65] text-[#f1f1f1] min-[1200px]:mt-6 min-[1200px]:mb-[22px] min-[1200px]:min-h-[88px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:my-[17px] max-[680px]:mb-[13px] max-[680px]:min-h-0 max-[680px]:text-xs"
-              >
-                “The return on investment has exceeded our expectations. It's an
-                investment in the future of our business.”
-              </p>
-              <div
-                class="testimonial-person mt-auto flex items-center gap-[10px] min-[1200px]:gap-[15px]"
-              >
-                <img
-                  alt=""
-                  class="testimonial-avatar h-9 w-9 flex-[0_0_36px] rounded-full bg-[#d4d4d4] object-cover min-[1200px]:h-[54px] min-[1200px]:w-[54px] min-[1200px]:flex-[0_0_54px] min-[681px]:max-[1199px]:h-11 min-[681px]:max-[1199px]:w-11 min-[681px]:max-[1199px]:flex-[0_0_44px]"
-                  loading="lazy"
-                  src="https://azzle.netlify.app/assets/img/th-1/testimonial-img-6.jpg"
-                />
-                <div>
-                  <p
-                    class="testimonial-name m-0 text-[10.5px] font-bold leading-[1.35] min-[1200px]:text-base min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-[13px] max-[680px]:text-xs"
-                  >
-                    Henry Ochi
-                  </p>
-                  <p
-                    class="testimonial-role mt-[3px] mb-0 text-[8px] leading-[1.3] text-[#e4e4e4] min-[1200px]:mt-1 min-[1200px]:text-xs min-[681px]:max-[1199px]:text-[10px] max-[680px]:text-[9px]"
-                  >
-                    Bank Manager
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- MEMBER-3:END testimonials -->
+            </div>
+        </section>
+        <!-- MEMBER-3:END testimonials -->
     </main>
 
     <!-- MEMBER-3:START footer | Mai Thạch Anh -->
     <footer
-      class="footer-shell relative isolate z-0 min-h-[590px] overflow-hidden rounded-t-[30px] bg-[#f0ebe4] min-[1200px]:min-h-[760px] min-[1200px]:rounded-t-[60px] min-[681px]:max-[1199px]:rounded-t-[48px] max-[680px]:min-h-0 max-[680px]:rounded-t-[32px]"
-      id="contact"
-    >
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute right-[-70px] top-[-145px] z-0 h-[260px] w-[360px] bg-[radial-gradient(ellipse_at_60%_35%,rgba(255,83,26,.98)_0%,rgba(255,107,51,.85)_36%,rgba(255,145,99,.35)_60%,transparent_78%)] blur-[8px] min-[1200px]:right-[-95px] min-[1200px]:top-[-205px] min-[1200px]:h-[380px] min-[1200px]:w-[520px] min-[1200px]:blur-[12px]"
-      ></div>
-      <div
-        aria-label="Start building software"
-        class="footer-marquee relative z-10 overflow-hidden pt-[76px] pb-[.16em] min-[1200px]:pt-[108px] min-[1200px]:pb-[14px] min-[681px]:max-[1199px]:pt-[72px] min-[681px]:max-[1199px]:pb-[10px] max-[680px]:pt-[58px] max-[680px]:pb-2"
-      >
-        <div
-          class="marquee-track flex w-max animate-[marquee_26s_linear_infinite] will-change-transform motion-reduce:animate-none"
-        >
-          <div
-            class="marquee-group flex shrink-0 items-center gap-5 whitespace-nowrap pr-5 text-[46px] font-extrabold leading-[1.14] tracking-[-1.8px] min-[1200px]:gap-8 min-[1200px]:pr-8 min-[1200px]:text-[76px] min-[1200px]:tracking-[-2.4px] min-[681px]:max-[1199px]:text-[clamp(42px,5.3vw,64px)] max-[680px]:gap-[14px] max-[680px]:pr-[14px] max-[680px]:text-[clamp(30px,7.5vw,42px)] max-[680px]:tracking-[-1.2px]"
-          >
-            <span
-              aria-hidden="true"
-              class="marquee-star text-[.85em] leading-[1.14]"
-              >✦</span
-            ><span>Start building software</span
-            ><span
-              aria-hidden="true"
-              class="marquee-star text-[.85em] leading-[1.14]"
-              >✦</span
-            ><span>Start building software</span
-            ><span
-              aria-hidden="true"
-              class="marquee-star text-[.85em] leading-[1.14]"
-              >✦</span
-            ><span>Start building software</span>
-          </div>
-          <div
-            aria-hidden="true"
-            class="marquee-group flex shrink-0 items-center gap-5 whitespace-nowrap pr-5 text-[46px] font-extrabold leading-[1.14] tracking-[-1.8px] min-[1200px]:gap-8 min-[1200px]:pr-8 min-[1200px]:text-[76px] min-[1200px]:tracking-[-2.4px] min-[681px]:max-[1199px]:text-[clamp(42px,5.3vw,64px)] max-[680px]:gap-[14px] max-[680px]:pr-[14px] max-[680px]:text-[clamp(30px,7.5vw,42px)] max-[680px]:tracking-[-1.2px]"
-          >
-            <span class="marquee-star text-[.85em] leading-[1.14]">✦</span
-            ><span>Start building software</span
-            ><span class="marquee-star text-[.85em] leading-[1.14]">✦</span
-            ><span>Start building software</span
-            ><span class="marquee-star text-[.85em] leading-[1.14]">✦</span
-            ><span>Start building software</span>
-          </div>
+        class="footer-shell relative isolate z-0 min-h-[590px] overflow-hidden rounded-t-[30px] bg-[#f0ebe4] min-[1200px]:min-h-[760px] min-[1200px]:rounded-t-[60px] min-[681px]:max-[1199px]:rounded-t-[48px] max-[680px]:min-h-0 max-[680px]:rounded-t-[32px]"
+        id="contact">
+        <div aria-hidden="true"
+            class="pointer-events-none absolute right-[-70px] top-[-145px] z-0 h-[260px] w-[360px] bg-[radial-gradient(ellipse_at_60%_35%,rgba(255,83,26,.98)_0%,rgba(255,107,51,.85)_36%,rgba(255,145,99,.35)_60%,transparent_78%)] blur-[8px] min-[1200px]:right-[-95px] min-[1200px]:top-[-205px] min-[1200px]:h-[380px] min-[1200px]:w-[520px] min-[1200px]:blur-[12px]">
         </div>
-      </div>
-      <div
-        class="footer-inner relative z-10 mx-auto mt-[62px] w-[min(calc(100%_-_40px),_780px)] border-t border-black/[.12] pt-[37px] min-[1200px]:mt-[100px] min-[1200px]:w-[min(calc(100%_-_64px),_1260px)] min-[1200px]:pt-[94px] min-[681px]:max-[1199px]:mt-[70px] min-[681px]:max-[1199px]:w-[min(calc(100%_-_48px),_1000px)] min-[681px]:max-[1199px]:pt-[52px] max-[680px]:mt-[52px] max-[680px]:pt-[30px]"
-      >
-        <div
-          class="footer-grid grid grid-cols-[1.55fr_.72fr_.78fr_1.35fr] gap-6 min-[1200px]:gap-10 min-[681px]:max-[1199px]:gap-6 max-[680px]:grid-cols-2 max-[680px]:gap-x-[22px] max-[680px]:gap-y-8"
-        >
-          <section aria-label="About Azzle" class="max-[680px]:col-span-full">
-            <a
-              class="footer-brand inline-flex items-center gap-[3px] text-[15px] font-extrabold leading-none tracking-[-.3px] text-black no-underline transition-opacity duration-200 hover:opacity-65 min-[1200px]:gap-[5px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.6px] min-[681px]:max-[1199px]:text-xl"
-              href="#pricing"
-              ><span
-                aria-hidden="true"
-                class="footer-brand-mark text-lg min-[1200px]:text-[25px]"
-                >✳</span
-              ><span>Azzle</span></a
-            >
-            <p
-              class="footer-description mt-3 max-w-[245px] text-[10px] leading-[1.8] text-[#171717] min-[1200px]:mt-4 min-[1200px]:max-w-[370px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:max-w-[380px] max-[680px]:text-xs"
-            >
-              Our mission is to harness the power of AI to solve complex
-              business challenges &amp; decision-makers with data-driven
-              insights, and enhance user experiences across digital platforms.
-            </p>
-            <p
-              class="footer-website mt-[14px] text-[10px] leading-[1.5] min-[1200px]:mt-[22px] min-[1200px]:text-[15px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]"
-            >
-              Website:
-              <a
-                class="text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                href="https://www.example.com"
-                rel="noreferrer"
-                target="_blank"
-                >www.example.com</a
-              >
-            </p>
-          </section>
-          <nav aria-label="Primary Pages">
-            <h2
-              class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal"
-            >
-              Primary Pages
-            </h2>
-            <ul
-              class="footer-link-list m-0 grid list-none gap-[9px] p-0 text-[10px] leading-[1.35] min-[1200px]:gap-[14px] min-[1200px]:text-[15px] min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-xs max-[680px]:gap-[11px] max-[680px]:text-[11px]"
-            >
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#pricing"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#faq"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#testimonials"
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#pricing"
-                  >Pricing</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#contact"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav aria-label="Utility Pages">
-            <h2
-              class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal"
-            >
-              Utility Pages
-            </h2>
-            <ul
-              class="footer-link-list m-0 grid list-none gap-[9px] p-0 text-[10px] leading-[1.35] min-[1200px]:gap-[14px] min-[1200px]:text-[15px] min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-xs max-[680px]:gap-[11px] max-[680px]:text-[11px]"
-            >
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#newsletterForm"
-                  >Signup</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#newsletterForm"
-                  >Login</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#contact"
-                  >404 Not Found</a
-                >
-              </li>
-              <li>
-                <a
-                  class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-                  href="#newsletterForm"
-                  >Password Reset</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <section aria-label="Newsletter subscription">
-            <h2
-              class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal"
-            >
-              Subscribe To Our Newsletter
-            </h2>
-            <form
-              class="newsletter-form flex w-full min-w-0 items-center rounded-full border border-[#111] bg-white p-[3px] transition-shadow duration-200 focus-within:shadow-[0_0_0_3px_rgba(255,91,34,.18)]"
-              id="newsletterForm"
-            >
-              <label class="sr-only" for="newsletterEmail">Email address</label>
-              <input
-                autocomplete="email"
-                class="newsletter-email w-0 min-w-0 flex-1 rounded-full border-0 bg-transparent px-[10px] py-[7px] text-[9px] outline-none placeholder:text-[#999] min-[1200px]:px-4 min-[1200px]:py-[11px] min-[1200px]:text-sm max-[680px]:text-[10px]"
-                id="newsletterEmail"
-                name="email"
-                placeholder="Enter your email"
-                required=""
-                type="email"
-              />
-              <button
-                aria-label="Subscribe"
-                class="newsletter-button inline-flex h-7 w-[42px] shrink-0 flex-[0_0_42px] cursor-pointer items-center justify-center rounded-full border-0 bg-black text-white transition-[background-color,transform] duration-200 hover:bg-[#ff5b22] active:scale-[.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:h-11 min-[1200px]:w-[70px] min-[1200px]:flex-[0_0_70px]"
-                type="submit"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="h-[17px] w-[17px] min-[1200px]:h-[22px] min-[1200px]:w-[22px]"
-                  fill="none"
-                  height="17"
-                  viewbox="0 0 24 24"
-                  width="17"
-                >
-                  <path
-                    d="M4 12h15M13 5l7 7-7 7"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                  ></path>
-                </svg>
-              </button>
-            </form>
-            <p
-              aria-live="polite"
-              class="newsletter-message mt-2 mb-0 min-h-[15px] text-[9px] leading-[1.5] text-[#3d3d3d] min-[1200px]:mt-[10px] min-[1200px]:min-h-5 min-[1200px]:text-[13px]"
-              id="newsletterMessage"
-              role="status"
-            ></p>
-          </section>
+        <div aria-label="Start building software"
+            class="footer-marquee relative z-10 overflow-hidden pt-[76px] pb-[.16em] min-[1200px]:pt-[108px] min-[1200px]:pb-[14px] min-[681px]:max-[1199px]:pt-[72px] min-[681px]:max-[1199px]:pb-[10px] max-[680px]:pt-[58px] max-[680px]:pb-2">
+            <div
+                class="marquee-track flex w-max animate-[marquee_26s_linear_infinite] will-change-transform motion-reduce:animate-none">
+                <div
+                    class="marquee-group flex shrink-0 items-center gap-5 whitespace-nowrap pr-5 text-[46px] font-extrabold leading-[1.14] tracking-[-1.8px] min-[1200px]:gap-8 min-[1200px]:pr-8 min-[1200px]:text-[76px] min-[1200px]:tracking-[-2.4px] min-[681px]:max-[1199px]:text-[clamp(42px,5.3vw,64px)] max-[680px]:gap-[14px] max-[680px]:pr-[14px] max-[680px]:text-[clamp(30px,7.5vw,42px)] max-[680px]:tracking-[-1.2px]">
+                    <span aria-hidden="true" class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start
+                        building software</span><span aria-hidden="true"
+                        class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start building
+                        software</span><span aria-hidden="true"
+                        class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start building software</span>
+                </div>
+                <div aria-hidden="true"
+                    class="marquee-group flex shrink-0 items-center gap-5 whitespace-nowrap pr-5 text-[46px] font-extrabold leading-[1.14] tracking-[-1.8px] min-[1200px]:gap-8 min-[1200px]:pr-8 min-[1200px]:text-[76px] min-[1200px]:tracking-[-2.4px] min-[681px]:max-[1199px]:text-[clamp(42px,5.3vw,64px)] max-[680px]:gap-[14px] max-[680px]:pr-[14px] max-[680px]:text-[clamp(30px,7.5vw,42px)] max-[680px]:tracking-[-1.2px]">
+                    <span class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start building
+                        software</span><span class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start
+                        building software</span><span
+                        class="marquee-star text-[.85em] leading-[1.14]">✦</span><span>Start building software</span>
+                </div>
+            </div>
         </div>
         <div
-          class="footer-copyright mt-12 border-t border-black/[.12] py-[22px] text-center min-[1200px]:mt-[98px] min-[1200px]:py-7 min-[681px]:max-[1199px]:mt-[60px] max-[680px]:mt-[35px]"
-        >
-          <p class="m-0 text-[10px] leading-[1.5] min-[1200px]:text-sm">
-            © Copyright 2023, All Rights Reserved by
-            <a
-              class="font-semibold text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
-              href="#pricing"
-              >Mthemeus</a
-            >
-          </p>
+            class="footer-inner relative z-10 mx-auto mt-[62px] w-[min(calc(100%_-_40px),_780px)] border-t border-black/[.12] pt-[37px] min-[1200px]:mt-[100px] min-[1200px]:w-[min(calc(100%_-_64px),_1260px)] min-[1200px]:pt-[94px] min-[681px]:max-[1199px]:mt-[70px] min-[681px]:max-[1199px]:w-[min(calc(100%_-_48px),_1000px)] min-[681px]:max-[1199px]:pt-[52px] max-[680px]:mt-[52px] max-[680px]:pt-[30px]">
+            <div
+                class="footer-grid grid grid-cols-[1.55fr_.72fr_.78fr_1.35fr] gap-6 min-[1200px]:gap-10 min-[681px]:max-[1199px]:gap-6 max-[680px]:grid-cols-2 max-[680px]:gap-x-[22px] max-[680px]:gap-y-8">
+                <section aria-label="About Azzle" class="max-[680px]:col-span-full">
+                    <a class="footer-brand inline-flex items-center gap-[3px] text-[15px] font-extrabold leading-none tracking-[-.3px] text-black no-underline transition-opacity duration-200 hover:opacity-65 min-[1200px]:gap-[5px] min-[1200px]:text-2xl min-[1200px]:tracking-[-.6px] min-[681px]:max-[1199px]:text-xl"
+                        href="#pricing"><span aria-hidden="true"
+                            class="footer-brand-mark text-lg min-[1200px]:text-[25px]">✳</span><span>Azzle</span></a>
+                    <p
+                        class="footer-description mt-3 max-w-[245px] text-[10px] leading-[1.8] text-[#171717] min-[1200px]:mt-4 min-[1200px]:max-w-[370px] min-[1200px]:text-base min-[681px]:max-[1199px]:text-[13px] max-[680px]:max-w-[380px] max-[680px]:text-xs">
+                        Our mission is to harness the power of AI to solve complex
+                        business challenges &amp; decision-makers with data-driven
+                        insights, and enhance user experiences across digital platforms.
+                    </p>
+                    <p
+                        class="footer-website mt-[14px] text-[10px] leading-[1.5] min-[1200px]:mt-[22px] min-[1200px]:text-[15px] min-[681px]:max-[1199px]:text-xs max-[680px]:text-[11px]">
+                        Website:
+                        <a class="text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                            href="https://www.example.com" rel="noreferrer" target="_blank">www.example.com</a>
+                    </p>
+                </section>
+                <nav aria-label="Primary Pages">
+                    <h2
+                        class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal">
+                        Primary Pages
+                    </h2>
+                    <ul
+                        class="footer-link-list m-0 grid list-none gap-[9px] p-0 text-[10px] leading-[1.35] min-[1200px]:gap-[14px] min-[1200px]:text-[15px] min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-xs max-[680px]:gap-[11px] max-[680px]:text-[11px]">
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#pricing">Home</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#faq">About Us</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#testimonials">Services</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#pricing">Pricing</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav aria-label="Utility Pages">
+                    <h2
+                        class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal">
+                        Utility Pages
+                    </h2>
+                    <ul
+                        class="footer-link-list m-0 grid list-none gap-[9px] p-0 text-[10px] leading-[1.35] min-[1200px]:gap-[14px] min-[1200px]:text-[15px] min-[1200px]:leading-[1.4] min-[681px]:max-[1199px]:text-xs max-[680px]:gap-[11px] max-[680px]:text-[11px]">
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#newsletterForm">Signup</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#newsletterForm">Login</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#contact">404 Not Found</a>
+                        </li>
+                        <li>
+                            <a class="footer-link text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                                href="#newsletterForm">Password Reset</a>
+                        </li>
+                    </ul>
+                </nav>
+                <section aria-label="Newsletter subscription">
+                    <h2
+                        class="footer-column-title mb-[14px] text-[10.5px] font-extrabold leading-[1.35] min-[1200px]:mb-6 min-[1200px]:text-[17px] min-[681px]:max-[1199px]:text-[13px] min-[681px]:max-[1199px]:whitespace-normal max-[680px]:text-[11px] max-[680px]:whitespace-normal">
+                        Subscribe To Our Newsletter
+                    </h2>
+                    <form
+                        class="newsletter-form flex w-full min-w-0 items-center rounded-full border border-[#111] bg-white p-[3px] transition-shadow duration-200 focus-within:shadow-[0_0_0_3px_rgba(255,91,34,.18)]"
+                        id="newsletterForm">
+                        <label class="sr-only" for="newsletterEmail">Email address</label>
+                        <input autocomplete="email"
+                            class="newsletter-email w-0 min-w-0 flex-1 rounded-full border-0 bg-transparent px-[10px] py-[7px] text-[9px] outline-none placeholder:text-[#999] min-[1200px]:px-4 min-[1200px]:py-[11px] min-[1200px]:text-sm max-[680px]:text-[10px]"
+                            id="newsletterEmail" name="email" placeholder="Enter your email" required="" type="email" />
+                        <button aria-label="Subscribe"
+                            class="newsletter-button inline-flex h-7 w-[42px] shrink-0 flex-[0_0_42px] cursor-pointer items-center justify-center rounded-full border-0 bg-black text-white transition-[background-color,transform] duration-200 hover:bg-[#ff5b22] active:scale-[.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#ff5b22] min-[1200px]:h-11 min-[1200px]:w-[70px] min-[1200px]:flex-[0_0_70px]"
+                            type="submit">
+                            <svg aria-hidden="true"
+                                class="h-[17px] w-[17px] min-[1200px]:h-[22px] min-[1200px]:w-[22px]" fill="none"
+                                height="17" viewbox="0 0 24 24" width="17">
+                                <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.8"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <p aria-live="polite"
+                        class="newsletter-message mt-2 mb-0 min-h-[15px] text-[9px] leading-[1.5] text-[#3d3d3d] min-[1200px]:mt-[10px] min-[1200px]:min-h-5 min-[1200px]:text-[13px]"
+                        id="newsletterMessage" role="status"></p>
+                </section>
+            </div>
+            <div
+                class="footer-copyright mt-12 border-t border-black/[.12] py-[22px] text-center min-[1200px]:mt-[98px] min-[1200px]:py-7 min-[681px]:max-[1199px]:mt-[60px] max-[680px]:mt-[35px]">
+                <p class="m-0 text-[10px] leading-[1.5] min-[1200px]:text-sm">
+                    © Copyright 2023, All Rights Reserved by
+                    <a class="font-semibold text-inherit no-underline transition-colors duration-200 hover:text-[#ff5b22]"
+                        href="#pricing">Mthemeus</a>
+                </p>
+            </div>
         </div>
-      </div>
     </footer>
     <!-- MEMBER-3:END footer -->
 
@@ -1931,6 +1327,6 @@
             statsObserver.observe(statsSection);
         }
     </script>
-    </body>
+</body>
 
 </html>
