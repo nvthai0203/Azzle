@@ -31,16 +31,23 @@ function closeVideo() {
               <img
                   src="assets/images/funfact-image.jpg"
                   alt="People working with an analytics dashboard"
-                  class="h-full w-full object-cover"
+                  class="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full"
               />
 
               <button
                   type="button"
                   onclick="playVideo()"
                   aria-label="Play video"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border border-black bg-white"
+                  class="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2"
               >
-                  Play
+                  <div
+                      class="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-[#FE330A] hover:text-white"
+                  >
+                      Play
+                      <div
+                          class="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30"
+                      ></div>
+                  </div>
               </button>
           `;
 }

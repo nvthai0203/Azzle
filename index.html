@@ -591,60 +591,68 @@
 
         <!-- MEMBER-2:START video | Nguyễn Hoàng Đạo -->
         <!-- MEMBER-2:START video-stats | Nguyễn Hoàng Đạo -->
-
         <section id="stats" aria-label="AI-powered that streamline tasks">
-            <div class="global-container w-[75%] mx-auto pt-2 pb- 10">
-                <div class="grid md:grid-cols-2 overflow-hidden rounded-3xl">
-                    <!-- Hình ảnh bên trái -->
-                    <div id="video-container" class="relative h-[770px] md:h-[550px]">
-                        <img src="assets/images/funfact-image.jpg" alt="People working with an analytics dashboard"
-                            class="h-full w-full object-cover" />
-
+            <div class="mx-auto max-w-[1500px] px-5">
+                <div
+                    class="jos !grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] min-[1400px]:grid-cols-[1fr_minmax(800px,_1fr)]">
+                    <div id="video-container" class="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
+                        <img src="assets/images/funfact-image.jpg"
+                            alt="People working with an analytics dashboard"
+                            class="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full" />
+        
                         <button type="button" onclick="playVideo()" aria-label="Play video"
-                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black bg-white/80 font-semibold text-black transition hover:scale-110">
-                            Play
+                            class="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2">
+                            <div
+                                class="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-[#FE330A] hover:text-white">
+                                Play
+                                <div
+                                    class="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30">
+                                </div>
+                            </div>
                         </button>
                     </div>
-
-                    <!-- Nội dung bên phải -->
-                    <div class="flex flex-col justify-center bg-black p-8 text-white md:p-10 lg:p-12">
-                        <h2 class="mb-6 text-3xl font-bold md:text-5xl">
-                            AI-powered that streamline tasks
-                        </h2>
-
-                        <p class="mb-10 text-base leading-7 text-gray-300">
-                            As your business grows or your AI SaaS needs change, you can
-                            easily adjust your subscription level to match those needs. This
-                            flexibility ensures that AI remains an asset.
-                        </p>
-
-                        <!-- Hai chỉ số -->
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <p class="mb-2 text-5xl font-bold text-[#FF5733] md:text-7xl">
-                                    <span class="counter" data-target="92">0</span>%
-                                </p>
-
-                                <p class="text-sm font-semibold md:text-base">
-                                    Customer service inquiries
-                                </p>
-                            </div>
-
-                            <div>
-                                <p class="mb-2 text-5xl font-bold text-[#FF5733] md:text-7xl">
-                                    <span class="counter" data-target="75">0</span>%
-                                </p>
-
-                                <p class="text-sm font-semibold md:text-base">
-                                    Using financial institutions
-                                </p>
-                            </div>
+        
+                    <div
+                        class="self-center px-6 py-16 sm:py-20 md:px-16 xl:px-10 xl:py-24 min-[1400px]:py-32 min-[1400px]:pl-16 min-[1400px]:pr-28">
+                        <div class="mb-8 lg:mb-16 xl:mb-6">
+                            <h2
+                                class="text-4xl font-bold leading-none tracking-[-2px] text-white min-[992px]:text-6xl min-[1200px]:text-7xl min-[1400px]:text-[80px]">
+                                AI-powered that streamline tasks
+                            </h2>
                         </div>
+                        <div class="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
+                            <p class="mb-7 last:mb-0">
+                                As your business grows or your AI SaaS needs change, you can
+                                easily adjust your subscription level to match those needs. This
+                                flexibility ensures that AI remains an asset.
+                            </p>
+                        </div>
+                        <div class="my-14 h-[1px] w-full bg-[#191919]"></div>
+                        <ul
+                            class="flex flex-col justify-center gap-x-11 gap-y-8 text-center sm:flex-row md:text-left xl:justify-normal xl:text-left min-[1400px]:gap-x-20">
+                            <li>
+                                <h3
+                                    class="text-5xl font-bold text-[#FE330A] md:text-6xl lg:text-7xl min-[1400px]:text-[120px]">
+                                    <span class="counter" data-target="92">0</span>%
+                                </h3>
+                                <span class="block text-lg font-normal text-white lg:text-[21px]">
+                                    Customer service inquiries
+                                </span>
+                            </li>
+                            <li>
+                                <h3
+                                    class="text-5xl font-bold text-[#FE330A] md:text-6xl lg:text-7xl min-[1400px]:text-[120px]">
+                                    <span class="counter" data-target="75">0</span>%
+                                </h3>
+                                <span class="block text-lg font-normal text-white lg:text-[21px]">
+                                    Using financial institutions
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- MEMBER-2:END video-stats -->
 
         <!-- MEMBER-3:START pricing | Mai Thạch Anh -->
