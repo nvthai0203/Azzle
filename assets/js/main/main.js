@@ -94,3 +94,18 @@ const statsObserver = new IntersectionObserver(
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
+
+/* PRICE BUTTON */
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        tabContents.forEach((content) => content.classList.add("hidden"));
+
+        const tabId = button.getAttribute("data-tab");
+        button.classList.add("active");
+        document.getElementById(tabId).classList.remove("hidden");
+    });
+});
