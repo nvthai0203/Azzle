@@ -28,3 +28,33 @@ body {
     background-color: #000;
     color: #fff;
 }
+
+/* ACCORDION */
+.accordion-item .accordion-header {
+    cursor: pointer;
+    column-gap: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.accordion-header .accordion-icon {
+    transition: 0.3s;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(-45deg);
+}
+
+.accordion-content {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.accordion-item.active .accordion-content {
+    height: auto;
+    margin-top: 15px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.5s;
+}
