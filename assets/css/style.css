@@ -58,3 +58,18 @@ body {
     transform: translateY(0);
     transition: 0.5s;
 }
+
+/* FOOTER */
+.orange-gradient-1 {
+    background: radial-gradient(50% 50%, rgb(255, 152, 49) 0%, rgb(254, 51, 10) 100%);
+    filter: blur(55px);
+}
+
+.orange-gradient-2 {
+    background: radial-gradient(50% 50%, rgb(254, 51, 10) 0%, rgb(255, 152, 49) 100%);
+    filter: blur(55px);
+}
+
+.footer-text-slider {
+    animation: marquee 10s linear infinite;
+}
