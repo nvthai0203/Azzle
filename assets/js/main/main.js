@@ -109,3 +109,16 @@ tabButtons.forEach((button) => {
         document.getElementById(tabId).classList.remove("hidden");
     });
 });
+
+/* ACCORDION */
+const accordions = document.querySelectorAll(".accordion-item");
+
+accordions.forEach((item) => {
+    const label = item.querySelector(".accordion-header");
+    label.addEventListener("click", () => {
+        accordions.forEach((accordionItem) => {
+            accordionItem.classList.remove("active");
+        });
+        item.classList.add("active");
+    });
+});
