@@ -2,6 +2,12 @@
 
 Bài tập BC-Capstone_Tailwind làm theo mẫu [Azzle - AI Technology & Startup](https://azzle.netlify.app/).
 
+## Links
+
+- Link nộp source: https://github.com/nvthai0203/Azzle
+- Link deploy: https://azzle-navy.vercel.app
+- Link youtube: https://youtu.be/xhy6sI57QC4
+
 ## Cấu trúc
 
 ```text
